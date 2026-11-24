@@ -202,6 +202,125 @@ def build_page(src_name, path_es, path_en, meta, extra):
         print('escrito', os.path.relpath(out_path, ROOT))
 
 
+# ---------------------------------------------------------------- app landings (one template, data in landings.json)
+
+APPLE_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg>')
+PLAY_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 2.6 13.5 12l-9.3 9.4c-.3-.2-.5-.6-.5-1.1V3.7c0-.5.2-.9.5-1.1z" fill="#2196f3"/>'
+            '<path d="m16.6 8.9-3.1 3.1-9.3-9.4c.3-.2.8-.2 1.2 0z" fill="#4caf50"/>'
+            '<path d="m16.6 15.1-11.2 6.3c-.4.2-.9.2-1.2 0l9.3-9.4z" fill="#f44336"/>'
+            '<path d="m20.2 10.9-3.6-2-3.1 3.1 3.1 3.1 3.6-2c.8-.5.8-1.7 0-2.2z" fill="#ffc107"/></svg>')
+
+UI = {
+    'es': {'download': 'Descárgala en la', 'get': 'Disponible en', 'features': 'Funciones', 'shots': 'Capturas',
+           'faq': 'Preguntas frecuentes', 'privacy': 'Política de privacidad', 'support': 'Soporte', 'more': 'Más apps',
+           'cta_sub': 'Gratis en la App Store', 'cta_sub_play': 'Gratis en la App Store y en Google Play', 'icon': 'Icono de'},
+    'en': {'download': 'Download on the', 'get': 'Get it on', 'features': 'Features', 'shots': 'Screenshots',
+           'faq': 'Frequently asked questions', 'privacy': 'Privacy Policy', 'support': 'Support', 'more': 'More apps',
+           'cta_sub': 'Free on the App Store', 'cta_sub_play': 'Free on the App Store and Google Play', 'icon': 'Icon of'},
+}
+
+
+def store_buttons(d, lang):
+    u = UI[lang]
+    cc = 'es' if lang == 'es' else 'us'
+    out = [f'<a class="store" href="https://apps.apple.com/{cc}/app/id{d["appStoreId"]}" rel="noopener">{APPLE_SVG}'
+           f'<span><small>{u["download"]}</small><strong>App Store</strong></span></a>']
+    if d.get('playStore'):
+        hl = 'es' if lang == 'es' else 'en'
+        out.append(f'<a class="store" href="{e(d["playStore"])}&amp;hl={hl}" rel="noopener">{PLAY_SVG}'
+                   f'<span><small>{u["get"]}</small><strong>Google Play</strong></span></a>')
+    return ''.join(out)
+
+
+def landing_jsonld(slug, d, lang):
+    t = d[lang]
+    base = f"{SITE}/{d['folder']}/" + ('' if lang == 'es' else 'en/')
+    app = {
+        '@context': 'https://schema.org', '@type': d['type'], 'name': t['name'],
+        'description': t['description'], 'url': base,
+        'image': f'{SITE}/{d["folder"]}/img/og.jpg',
+        'screenshot': [f'{SITE}/{d["folder"]}/img/shot-{lang}-{i}.jpg' for i in range(1, d['shots'] + 1)],
+        'operatingSystem': d['os'], 'applicationCategory': d['schemaCategory'],
+        'inLanguage': d['languages'],
+        'installUrl': f'https://apps.apple.com/app/id{d["appStoreId"]}',
+        'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR'},
+        'author': {'@type': 'Person', 'name': 'Víctor M. García Ortega'},
+        'publisher': {'@type': 'Organization', 'name': 'Redpolas Apps', 'url': SITE + '/'},
+    }
+    if d.get('genre'):
+        app['genre'] = d['genre']
+    if d['type'] == 'VideoGame':
+        app['gamePlatform'] = ['iPhone']
+    if d.get('playStore'):
+        app['sameAs'] = [f'https://apps.apple.com/app/id{d["appStoreId"]}', d['playStore']]
+    faq = {'@context': 'https://schema.org', '@type': 'FAQPage',
+           'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in t['faq']]}
+    crumbs = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'Redpolas Apps', 'item': SITE + ('/' if lang == 'es' else '/en/')},
+        {'@type': 'ListItem', 'position': 2, 'name': t['name'], 'item': base}]}
+    return '\n'.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in (app, faq, crumbs))
+
+
+def build_landing(slug, d):
+    tpl = open(os.path.join(SRC, 'app.html'), encoding='utf-8').read()
+    path_es, path_en = f'/{d["folder"]}/', f'/{d["folder"]}/en/'
+    meta = {'image': f'/{d["folder"]}/img/og.jpg',
+            'es': {'title': d['es']['title'], 'description': d['es']['description']},
+            'en': {'title': d['en']['title'], 'description': d['en']['description']}}
+    for lang in LANGS:
+        t, u = d[lang], UI[lang]
+        page = tpl
+        for k, v in d['theme'].items():
+            page = page.replace('{{T_' + k + '}}', v)
+        langs = (f'<a class="on" aria-current="page" href="{path_es}">ES</a><a href="{path_en}" hreflang="en">EN</a>' if lang == 'es'
+                 else f'<a href="{path_es}" hreflang="es">ES</a><a class="on" aria-current="page" href="{path_en}">EN</a>')
+        demo = ''
+        if d.get('eyeDemo'):
+            rows = [('Marrones' if lang == 'es' else 'Brown', 50, '#7a4b2a'), ('Verdes' if lang == 'es' else 'Green', 38, '#4f9a5a'),
+                    ('Azules' if lang == 'es' else 'Blue', 12, '#3f86e0')]
+            bars = ''.join(f'<div class="bar" style="--w:{p}%;--col:{c}"><b><span>{n}</span><span>{p}%</span></b><i></i></div>' for n, p, c in rows)
+            eyes = ''.join(f'<span class="eye" style="--col:{c}"></span>' for _, _, c in rows)
+            demo = (f'  <section style="padding-bottom: 0;">\n    <div class="wrap">\n      <div class="demo">\n'
+                    f'        <div class="eyes" aria-hidden="true">{eyes}</div>\n'
+                    f'        <div><p class="kicker">{e(t["demoTitle"])}</p><div class="bars">{bars}</div><p class="caption">{e(t["demoCaption"])}</p></div>\n'
+                    f'      </div>\n    </div>\n  </section>\n')
+        steps = ''
+        if t.get('steps'):
+            items = ''.join(f'<div class="step"><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in t['steps'])
+            steps = (f'  <section>\n    <div class="wrap">\n      <p class="kicker">{"Paso a paso" if lang == "es" else "Step by step"}</p>\n'
+                     f'      <h2>{e(t["stepsTitle"])}</h2>\n      <div class="steps">{items}</div>\n    </div>\n  </section>\n')
+        feats = ''.join(f'<article class="feature"><div class="ico" aria-hidden="true">{i}</div><h3>{e(a)}</h3><p>{e(b)}</p></article>'
+                        for i, a, b in t['features'])
+        gallery = ''.join(f'<figure><img src="/{d["folder"]}/img/shot-{lang}-{i}.jpg" alt="{e(t["shotAlts"][i - 1])}" width="600" height="1304" loading="lazy"></figure>'
+                          for i in range(1, d['shots'] + 1))
+        faq = ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in t['faq'])
+        reps = {
+            'LANG': lang, 'SLUG': slug, 'APP_ID': d['appStoreId'], 'BASE': f'/{d["folder"]}/',
+            'HOME': '/' if lang == 'es' else '/en/', 'LANG_LINKS': langs,
+            'NAME': e(t['name']), 'CATEGORY': e(t['category']), 'ICON_ALT': e(f'{u["icon"]} {t["name"]}'),
+            'H1': e(t['h1']), 'LEAD': e(t['lead']), 'STORE_BUTTONS': store_buttons(d, lang),
+            'FACTS': ''.join(f'<span class="fact">{e(f)}</span>' for f in t['facts']),
+            'ALT1': e(t['shotAlts'][0]), 'ALT2': e(t['shotAlts'][1]),
+            'DEMO': demo, 'STEPS': steps,
+            'K_FEATURES': u['features'], 'FEATURES_TITLE': e(t['featuresTitle']), 'FEATURES': feats,
+            'FEATURES_CLASS': ' four' if len(t['features']) == 4 else '',
+            'K_SHOTS': u['shots'], 'SHOTS_TITLE': e(t['shotsTitle']), 'GALLERY': gallery,
+            'ARTICLE_TITLE': e(t['articleTitle']), 'ARTICLE': ''.join(f'<p>{e(x)}</p>' for x in t['article']),
+            'K_FAQ': u['faq'], 'FAQ': faq, 'NOTE': f'<p class="note">{e(t["note"])}</p>' if t.get('note') else '',
+            'CTA': e(t['cta']), 'CTA_SUB': u['cta_sub_play'] if d.get('playStore') else u['cta_sub'],
+            'PRIVACY': f'/{d["folder"]}/privacy.html', 'L_PRIVACY': u['privacy'], 'L_SUPPORT': u['support'], 'L_MORE': u['more'],
+            'JSONLD': landing_jsonld(slug, d, lang),
+        }
+        page = page.replace('<!--HEAD-->', head_block(meta, lang, path_es, path_en))
+        for k, v in reps.items():
+            page = page.replace('{{' + k + '}}', v)
+        assert '{{' not in page, (slug, lang, page[page.index('{{'):page.index('{{') + 40])
+        out = os.path.join(ROOT, (path_es if lang == 'es' else path_en).lstrip('/'), 'index.html')
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        open(out, 'w', encoding='utf-8').write(page)
+        print('escrito', os.path.relpath(out, ROOT))
+
+
 def main():
     apps = json.load(open(os.path.join(SRC, 'apps.json'), encoding='utf-8'))
     live_count = sum(1 for a in apps if a.get('status') == 'live')
@@ -267,8 +386,12 @@ def main():
 
     build_page('linetycoon.html', '/LineTycoon/', '/LineTycoon/en/', lt_meta, {'JSONLD': lt_ld})
 
+    landings = json.load(open(os.path.join(SRC, 'landings.json'), encoding='utf-8'))
+    for slug, d in landings.items():
+        build_landing(slug, d)
+
     # sitemap + robots
-    pages = [('/', '/en/'), ('/LineTycoon/', '/LineTycoon/en/')]
+    pages = [('/', '/en/'), ('/LineTycoon/', '/LineTycoon/en/')] + [(f'/{d["folder"]}/', f'/{d["folder"]}/en/') for d in landings.values()]
     urls = []
     for es, en in pages:
         for loc in (es, en):

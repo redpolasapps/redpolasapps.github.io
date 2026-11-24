@@ -1,0 +1,637 @@
+{
+  "cozyplants": {
+    "folder": "CozyPlants",
+    "appStoreId": "6831216434",
+    "type": "VideoGame",
+    "schemaCategory": "GameApplication",
+    "genre": [
+      "Simulation",
+      "Casual"
+    ],
+    "os": "iOS 17.0 or later",
+    "devices": "iPhone",
+    "languages": [
+      "es",
+      "en",
+      "fr"
+    ],
+    "shots": 5,
+    "theme": {
+      "bg": "#fff8ea",
+      "surface": "#ffffff",
+      "ink": "#3a2e22",
+      "ink2": "#6b5a47",
+      "line": "#efe2c8",
+      "c1": "#5b8c45",
+      "c1dark": "#3f6b2e",
+      "c2": "#f2b92f",
+      "soft": "#eef6e4",
+      "hero": "linear-gradient(180deg, #c9e8f5 0%, #e3f2d3 58%, #fff8ea 100%)",
+      "heading": "ui-rounded, \"SF Pro Rounded\", \"Arial Rounded MT Bold\", system-ui, -apple-system, sans-serif",
+      "radius": "26px"
+    },
+    "es": {
+      "title": "Cozy Plants: juego relajante de jardín y plantas para iPhone",
+      "description": "Juego idle relajante para cultivar plantas: 24 especies, un herbario ilustrado a mano y un jardín acogedor que decoras a tu gusto. Gratis para iPhone.",
+      "name": "Cozy Plants: Idle Garden",
+      "category": "Juego relajante · Simulación",
+      "h1": "Tu jardín mágico, a tu ritmo",
+      "lead": "Cozy Plants es un juego idle relajante de jardinería: siembra, riega y colecciona 24 especies de plantas ilustradas a mano, sin prisas ni presión.",
+      "facts": [
+        "Gratis",
+        "24 especies",
+        "Español · English · Français",
+        "iPhone"
+      ],
+      "featuresTitle": "Un rincón verde para desconectar",
+      "features": [
+        [
+          "🌱",
+          "Siembra, riega y cultiva",
+          "Planta semillas en los bancales y mira crecer tus plantas con animaciones artesanales, incluso mientras no juegas."
+        ],
+        [
+          "🧪",
+          "Alquimia sin duplicados",
+          "Incuba bulbos en el cobertizo y prepara elixires: cada brote nuevo es una especie que aún no tienes."
+        ],
+        [
+          "📖",
+          "Herbario ilustrado",
+          "Colecciona 24 especies con su nombre científico, curiosidades botánicas y variantes doradas Shiny."
+        ],
+        [
+          "🏡",
+          "Decora a tu gusto",
+          "Más de 80 diseños de cobertizo, bancos de madera, farolillos y regaderas para tu rincón perfecto."
+        ],
+        [
+          "🐰",
+          "Visitas diarias",
+          "Un conejito blanco te trae regalos cada día. Completa misiones sencillas y mantén tu racha de 7 días."
+        ],
+        [
+          "🍃",
+          "Pensado para la calma",
+          "Sin temporizadores agresivos ni presión: ideal antes de dormir o en el trayecto diario."
+        ]
+      ],
+      "shotsTitle": "Así es tu jardín",
+      "shotAlts": [
+        "Jardín mágico de Cozy Plants con casita y bancales de flores",
+        "24 especies de plantas únicas para coleccionar",
+        "Más de 350 objetos para decorar el jardín",
+        "Decora el jardín y el cobertizo a tu gusto",
+        "Mesa de laboratorio para preparar elixires botánicos"
+      ],
+      "articleTitle": "Un juego de plantas para relajarse",
+      "article": [
+        "Si buscas un juego tranquilo para el móvil, Cozy Plants es un juego idle de jardinería pensado para el bienestar: no hay temporizadores que te persigan ni partidas que perder. Cultivas a tu ritmo y el jardín sigue creciendo cuando cierras la app.",
+        "Cada planta del herbario está dibujada a mano con estilo cómic e incluye su nombre científico real y datos curiosos, así que además de coleccionar aprendes un poco de botánica."
+      ],
+      "faq": [
+        [
+          "¿Cozy Plants es gratis?",
+          "Sí. Cozy Plants se descarga gratis en la App Store e incluye compras opcionales dentro de la app."
+        ],
+        [
+          "¿Qué tipo de juego es?",
+          "Un juego idle (incremental) y de colección relajante: cultivas plantas, completas un herbario de 24 especies y decoras tu jardín y tu cobertizo, sin presión ni prisas."
+        ],
+        [
+          "¿Necesito crear una cuenta?",
+          "No. Cozy Plants no pide registro ni inicio de sesión: tu progreso se guarda en tu dispositivo."
+        ],
+        [
+          "¿En qué idiomas está?",
+          "En español, inglés y francés."
+        ],
+        [
+          "¿En qué dispositivos funciona?",
+          "En iPhone con iOS 17 o posterior."
+        ]
+      ],
+      "cta": "Planta tu primera semilla hoy"
+    },
+    "en": {
+      "title": "Cozy Plants: relaxing idle garden game for iPhone",
+      "description": "A relaxing idle plant game: grow 24 species, fill a hand-drawn herbarium and decorate a cozy garden your way. Free on iPhone.",
+      "name": "Cozy Plants idle: Garden Sim",
+      "category": "Cozy game · Simulation",
+      "h1": "Your magical garden, at your own pace",
+      "lead": "Cozy Plants is a relaxing idle gardening game: plant, water and collect 24 hand-drawn plant species, with no rush and no pressure.",
+      "facts": [
+        "Free",
+        "24 species",
+        "English · Español · Français",
+        "iPhone"
+      ],
+      "featuresTitle": "A green corner to unwind",
+      "features": [
+        [
+          "🌱",
+          "Plant, water & nurture",
+          "Sow seeds in your garden beds and watch your plants grow with handcrafted animations, even while you're away."
+        ],
+        [
+          "🧪",
+          "Alchemy, zero duplicates",
+          "Incubate bulbs in the shed and brew elixirs: every new bloom is a species you don't have yet."
+        ],
+        [
+          "📖",
+          "Illustrated herbarium",
+          "Collect 24 species with real scientific names, botanical trivia and ultra-rare Shiny golden variants."
+        ],
+        [
+          "🏡",
+          "Decorate your way",
+          "Over 80 shed themes, rustic benches, warm lanterns and watering cans for your perfect sanctuary."
+        ],
+        [
+          "🐰",
+          "Daily visits",
+          "A friendly white rabbit brings gifts every day. Complete simple quests and keep your 7-day streak."
+        ],
+        [
+          "🍃",
+          "Made for calm",
+          "No aggressive countdowns, no stress: perfect before sleep or on your commute."
+        ]
+      ],
+      "shotsTitle": "Inside your garden",
+      "shotAlts": [
+        "Cozy Plants magical garden with a cottage and flower beds",
+        "24 unique plant species to collect",
+        "Over 350 items to decorate the garden",
+        "Decorate your garden and shed your way",
+        "Lab table to brew botanical elixirs"
+      ],
+      "articleTitle": "A plant game to help you relax",
+      "article": [
+        "Looking for a calm game for your phone? Cozy Plants is an idle gardening game made for mindfulness: no timers chasing you and nothing to lose. You grow at your own pace and the garden keeps growing when you close the app.",
+        "Every plant in the herbarium is hand-drawn in a warm comic style and comes with its real scientific name and fun facts, so you learn a little botany while you collect."
+      ],
+      "faq": [
+        [
+          "Is Cozy Plants free?",
+          "Yes. Cozy Plants is a free download on the App Store and includes optional in-app purchases."
+        ],
+        [
+          "What kind of game is it?",
+          "A relaxing idle (incremental) collecting game: grow plants, complete a 24-species herbarium and decorate your garden and shed, with no pressure."
+        ],
+        [
+          "Do I need an account?",
+          "No. Cozy Plants needs no sign-up or login: your progress is stored on your device."
+        ],
+        [
+          "Which languages does it support?",
+          "English, Spanish and French."
+        ],
+        [
+          "Which devices does it run on?",
+          "iPhone with iOS 17 or later."
+        ]
+      ],
+      "cta": "Plant your first seed today"
+    }
+  },
+  "dogweight": {
+    "folder": "DogWeight",
+    "appStoreId": "6819761466",
+    "type": "MobileApplication",
+    "schemaCategory": "HealthApplication",
+    "os": "iOS 17.6 or later",
+    "devices": "iPhone",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "shots": 5,
+    "theme": {
+      "bg": "#f5f7ff",
+      "surface": "#ffffff",
+      "ink": "#1d2340",
+      "ink2": "#525a7a",
+      "line": "#e3e7f6",
+      "c1": "#2f6fde",
+      "c1dark": "#2154b3",
+      "c2": "#8b6cf0",
+      "soft": "#eaf0ff",
+      "hero": "linear-gradient(160deg, #e6eeff 0%, #efe8ff 100%)",
+      "heading": "-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"Segoe UI\", Roboto, sans-serif",
+      "radius": "22px"
+    },
+    "es": {
+      "title": "DogWeight: app para controlar el peso de tu perro en iPhone",
+      "description": "Registra el peso y el crecimiento de tu perro con gráficas, historial y notas, y exporta informes en PDF o CSV para el veterinario. Gratis para iPhone.",
+      "name": "DogWeight - Peso de mi Perro",
+      "category": "Salud · Mascotas",
+      "h1": "Controla el peso de tu perro de forma sencilla",
+      "lead": "DogWeight registra el peso y el crecimiento de tus perros con gráficas claras, un historial completo e informes listos para llevar al veterinario.",
+      "facts": [
+        "Gratis",
+        "kg y lb",
+        "Varios perros",
+        "PDF y CSV"
+      ],
+      "stepsTitle": "Así de fácil",
+      "steps": [
+        [
+          "Crea su perfil",
+          "Añade a cada perro con su foto, raza y fecha de nacimiento."
+        ],
+        [
+          "Anota su peso",
+          "Registra cada pesaje en kilos o libras, con notas si quieres."
+        ],
+        [
+          "Sigue su evolución",
+          "Mira sus gráficas de crecimiento y comparte el informe con tu veterinario."
+        ]
+      ],
+      "featuresTitle": "Todo lo que necesitas para seguir su salud",
+      "features": [
+        [
+          "🐶",
+          "Varios perros",
+          "Un perfil para cada uno, con foto, raza y fecha de nacimiento."
+        ],
+        [
+          "⚖️",
+          "Kilos o libras",
+          "Registra el peso en la unidad que prefieras, en segundos."
+        ],
+        [
+          "📈",
+          "Gráficas de crecimiento",
+          "Visualiza su evolución y detecta cambios a tiempo."
+        ],
+        [
+          "📝",
+          "Historial con notas",
+          "Cada pesaje con su fecha y notas: dieta, medicación o visitas al veterinario."
+        ],
+        [
+          "📄",
+          "Informes para el veterinario",
+          "Exporta su historial en PDF o en hoja de cálculo (CSV)."
+        ],
+        [
+          "☁️",
+          "Copia de seguridad",
+          "Guarda una copia en tu Google Drive si quieres mantener tus datos a salvo."
+        ]
+      ],
+      "shotsTitle": "Así se ve DogWeight",
+      "shotAlts": [
+        "Lista de perros con su peso actual en DogWeight",
+        "Gráfica de evolución del peso de un perro",
+        "Historial completo de pesajes con fechas",
+        "Exportar el historial de peso en PDF y Excel",
+        "Copia de seguridad y datos privados en el dispositivo"
+      ],
+      "articleTitle": "¿Por qué controlar el peso de tu perro?",
+      "article": [
+        "Pesar a tu perro con regularidad es una de las formas más sencillas de cuidar su salud: los cambios de peso, hacia arriba o hacia abajo, suelen ser una de las primeras señales de que algo cambia en su alimentación, su actividad o su estado general.",
+        "Con DogWeight tienes todos los pesajes en un mismo sitio, con su gráfica, para que puedas enseñárselos a tu veterinario y tomar decisiones con datos. Es especialmente útil con cachorros en crecimiento, perros en dieta o perros mayores."
+      ],
+      "faq": [
+        [
+          "¿DogWeight es gratis?",
+          "Sí. DogWeight se descarga gratis en la App Store e incluye compras opcionales dentro de la app."
+        ],
+        [
+          "¿Puedo llevar el control de varios perros?",
+          "Sí. Puedes crear un perfil para cada perro con su foto, raza y fecha de nacimiento, y llevar el historial de cada uno por separado."
+        ],
+        [
+          "¿Puedo compartir el historial con mi veterinario?",
+          "Sí. Puedes exportar los pesajes en un informe PDF o en una hoja de cálculo (CSV)."
+        ],
+        [
+          "¿Dónde se guardan mis datos?",
+          "En tu dispositivo. No hace falta crear una cuenta. Si quieres, puedes guardar una copia de seguridad en tu propio Google Drive."
+        ],
+        [
+          "¿Sustituye al veterinario?",
+          "No. DogWeight es una herramienta de registro personal: sus datos y gráficas no son un diagnóstico ni sustituyen la consulta con un veterinario."
+        ]
+      ],
+      "note": "DogWeight es una herramienta de registro personal para tutores de mascotas. Los datos y gráficas no constituyen un diagnóstico veterinario ni sustituyen la consulta con un profesional.",
+      "cta": "Empieza a cuidar su peso hoy"
+    },
+    "en": {
+      "title": "DogWeight: dog weight tracker app for iPhone",
+      "description": "Track your dog's weight and growth with charts, a full log and notes, and export PDF or CSV reports for your vet. Free on iPhone.",
+      "name": "DogWeight - Dog Weight Tracker",
+      "category": "Health · Pets",
+      "h1": "Track your dog's weight, simply",
+      "lead": "DogWeight keeps your dogs' weight and growth in one place, with clear charts, a full history and reports ready for your vet.",
+      "facts": [
+        "Free",
+        "kg & lb",
+        "Multiple dogs",
+        "PDF & CSV"
+      ],
+      "stepsTitle": "It's that easy",
+      "steps": [
+        [
+          "Create a profile",
+          "Add each dog with a photo, breed and birthdate."
+        ],
+        [
+          "Log their weight",
+          "Record every weigh-in in kilograms or pounds, with notes if you like."
+        ],
+        [
+          "Follow their progress",
+          "See their growth charts and share the report with your vet."
+        ]
+      ],
+      "featuresTitle": "Everything you need to follow their health",
+      "features": [
+        [
+          "🐶",
+          "Multiple dogs",
+          "A profile for each one, with photo, breed and birthdate."
+        ],
+        [
+          "⚖️",
+          "Kilograms or pounds",
+          "Log weight in the unit you prefer, in seconds."
+        ],
+        [
+          "📈",
+          "Growth charts",
+          "See their progress over time and spot changes early."
+        ],
+        [
+          "📝",
+          "Log with notes",
+          "Every weigh-in with its date and notes: diet, medication or vet visits."
+        ],
+        [
+          "📄",
+          "Reports for your vet",
+          "Export their history as a PDF or a spreadsheet (CSV)."
+        ],
+        [
+          "☁️",
+          "Cloud backup",
+          "Keep a copy in your own Google Drive so your data stays safe."
+        ]
+      ],
+      "shotsTitle": "A look at DogWeight",
+      "shotAlts": [
+        "List of dogs with their current weight in DogWeight",
+        "Dog weight trend chart",
+        "Full weigh-in history with dates",
+        "Export weight history to PDF and spreadsheet",
+        "Backup and private on-device data"
+      ],
+      "articleTitle": "Why track your dog's weight?",
+      "article": [
+        "Weighing your dog regularly is one of the simplest ways to look after their health: weight changes, up or down, are often one of the first signs that something has changed in their diet, activity or overall condition.",
+        "DogWeight keeps every weigh-in in one place, with a chart, so you can show it to your vet and make decisions with real data. It's especially useful for growing puppies, dogs on a diet and senior dogs."
+      ],
+      "faq": [
+        [
+          "Is DogWeight free?",
+          "Yes. DogWeight is a free download on the App Store and includes optional in-app purchases."
+        ],
+        [
+          "Can I track more than one dog?",
+          "Yes. Create a profile for each dog with a photo, breed and birthdate, and keep each one's history separately."
+        ],
+        [
+          "Can I share the history with my vet?",
+          "Yes. Export the weigh-ins as a PDF report or a spreadsheet (CSV)."
+        ],
+        [
+          "Where is my data stored?",
+          "On your device. No account is needed. If you like, you can keep a backup in your own Google Drive."
+        ],
+        [
+          "Does it replace my vet?",
+          "No. DogWeight is a personal tracking tool: its data and charts are not a diagnosis and don't replace a visit to a licensed veterinarian."
+        ]
+      ],
+      "note": "DogWeight is a personal tracking tool for pet owners. Its data and charts are not veterinary advice, diagnosis or treatment.",
+      "cta": "Start tracking their weight today"
+    }
+  },
+  "eyecolor": {
+    "folder": "BabyEyeColor",
+    "appStoreId": "6818159901",
+    "playStore": "https://play.google.com/store/apps/details?id=com.redpolasapps.babyeyecolor",
+    "type": "MobileApplication",
+    "schemaCategory": "LifestyleApplication",
+    "os": "iOS 17.0 or later, Android",
+    "devices": "iPhone, iPad, Android",
+    "languages": [
+      "es",
+      "en",
+      "fr",
+      "de",
+      "pt"
+    ],
+    "shots": 4,
+    "eyeDemo": true,
+    "theme": {
+      "bg": "#f6f9fd",
+      "surface": "#ffffff",
+      "ink": "#16233d",
+      "ink2": "#4f5d78",
+      "line": "#e1e8f3",
+      "c1": "#2f73d9",
+      "c1dark": "#1f58b0",
+      "c2": "#7a4b2a",
+      "soft": "#e8f1fd",
+      "hero": "radial-gradient(circle at 1px 1px, #d6e2f3 1px, transparent 0) 0 0 / 18px 18px, linear-gradient(180deg, #f2f7fe 0%, #f6f9fd 100%)",
+      "heading": "-apple-system, BlinkMacSystemFont, \"SF Pro Display\", \"Segoe UI\", Roboto, sans-serif",
+      "radius": "22px"
+    },
+    "es": {
+      "title": "¿De qué color tendrá los ojos mi bebé? Calculadora EyeColor",
+      "description": "Calcula la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules según los ojos de los padres y los abuelos. App gratis para iPhone y Android.",
+      "name": "EyeColor: Predictor Ojos Bebé",
+      "category": "Estilo de vida · Familia",
+      "h1": "¿De qué color tendrá los ojos tu bebé?",
+      "lead": "EyeColor calcula en segundos la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules a partir de los ojos de sus padres y, si quieres, de sus abuelos.",
+      "facts": [
+        "Gratis",
+        "iPhone, iPad y Android",
+        "Sin registro",
+        "5 idiomas"
+      ],
+      "demoTitle": "Ejemplo de resultado",
+      "demoCaption": "Porcentajes de ejemplo. El tuyo depende de los ojos de tu familia.",
+      "stepsTitle": "Cómo funciona",
+      "steps": [
+        [
+          "Configura a los padres",
+          "Elige el color de ojos de la madre y del padre."
+        ],
+        [
+          "Añade a los abuelos",
+          "Opcional: con los abuelos maternos y paternos el cálculo es mucho más preciso."
+        ],
+        [
+          "Mira el resultado",
+          "Pulsa calcular y verás al instante el porcentaje de ojos marrones, verdes y azules."
+        ]
+      ],
+      "featuresTitle": "Pensada para futuras mamás y papás",
+      "features": [
+        [
+          "🌳",
+          "Árbol familiar visual",
+          "Configura a padres y abuelos con un solo toque."
+        ],
+        [
+          "🧬",
+          "Basada en la genética",
+          "Un modelo simplificado de herencia mendeliana y poligénica."
+        ],
+        [
+          "📊",
+          "Porcentajes claros",
+          "Probabilidad de ojos azules, verdes y marrones con un gráfico sencillo."
+        ],
+        [
+          "🔒",
+          "Privacidad total",
+          "Sin registro ni datos sensibles: todo se calcula en tu dispositivo."
+        ]
+      ],
+      "shotsTitle": "Así es EyeColor",
+      "shotAlts": [
+        "¿Qué color de ojos tendrá tu bebé? Árbol familiar de EyeColor",
+        "Predicción genética del color de ojos con porcentajes",
+        "Configura el árbol familiar con padres y abuelos",
+        "Resultado con porcentajes de ojos marrones, verdes y azules"
+      ],
+      "articleTitle": "¿Cómo se hereda el color de ojos?",
+      "article": [
+        "El color de ojos no depende de un solo gen, sino de varios (es un rasgo poligénico), aunque unos pocos tienen mucho peso. Por eso se habla de probabilidades: dos padres con ojos marrones pueden tener un bebé con ojos azules si ambos llevan la variante para ojos claros, y que los abuelos tengan ojos claros aumenta esa probabilidad.",
+        "Además, muchos bebés nacen con los ojos más claros de lo que los tendrán después: el color definitivo suele asentarse durante el primer año de vida. EyeColor usa un modelo simplificado para darte una estimación orientativa y divertida, no un resultado médico."
+      ],
+      "faq": [
+        [
+          "¿Cómo calcula EyeColor el color de ojos del bebé?",
+          "Usa un modelo simplificado basado en la genética mendeliana y la herencia poligénica: a partir del color de ojos de los padres, y de los abuelos si los añades, calcula la probabilidad de ojos marrones, verdes y azules."
+        ],
+        [
+          "¿Es fiable el resultado?",
+          "Es una estimación orientativa con fines recreativos y educativos. El color de ojos depende de muchos genes y puede cambiar durante el primer año de vida, así que ninguna calculadora puede asegurarlo."
+        ],
+        [
+          "¿Por qué añadir a los abuelos?",
+          "Porque los abuelos indican qué variantes pueden llevar los padres aunque no se vean en sus ojos. Con ellos, el cálculo es mucho más preciso."
+        ],
+        [
+          "¿Mis datos están seguros?",
+          "Sí. No hace falta registrarse ni introducir datos personales: todos los cálculos se hacen en tu dispositivo."
+        ],
+        [
+          "¿Está para Android?",
+          "Sí. EyeColor está gratis en la App Store para iPhone y iPad y en Google Play para Android."
+        ]
+      ],
+      "note": "EyeColor es una herramienta interactiva con fines recreativos y educativos basada en modelos estándar de probabilidad genética.",
+      "cta": "Descubre los ojos de tu bebé"
+    },
+    "en": {
+      "title": "Baby Eye Color Calculator & Predictor | EyeColor",
+      "description": "Find the odds of your baby having brown, green or blue eyes from the parents' and grandparents' eye colors. Free app for iPhone and Android.",
+      "name": "EyeColor: Baby Eye Predictor",
+      "category": "Lifestyle · Family",
+      "h1": "What color will your baby's eyes be?",
+      "lead": "EyeColor works out in seconds the odds of your baby having brown, green or blue eyes from the parents' eye colors and, if you like, the grandparents'.",
+      "facts": [
+        "Free",
+        "iPhone, iPad & Android",
+        "No sign-up",
+        "5 languages"
+      ],
+      "demoTitle": "Sample result",
+      "demoCaption": "Sample percentages. Yours depend on your family's eyes.",
+      "stepsTitle": "How it works",
+      "steps": [
+        [
+          "Set up the parents",
+          "Pick the mother's and father's eye colors."
+        ],
+        [
+          "Add the grandparents",
+          "Optional: with maternal and paternal grandparents the result is much more accurate."
+        ],
+        [
+          "See the result",
+          "Tap calculate to instantly see the odds of brown, green and blue eyes."
+        ]
+      ],
+      "featuresTitle": "Made for parents-to-be",
+      "features": [
+        [
+          "🌳",
+          "Visual family tree",
+          "Set up parents and grandparents with a single tap."
+        ],
+        [
+          "🧬",
+          "Based on genetics",
+          "A simplified model of Mendelian and polygenic inheritance."
+        ],
+        [
+          "📊",
+          "Clear percentages",
+          "Odds of blue, green and brown eyes in a simple chart."
+        ],
+        [
+          "🔒",
+          "Complete privacy",
+          "No sign-up or sensitive data: everything is calculated on your device."
+        ]
+      ],
+      "shotsTitle": "A look at EyeColor",
+      "shotAlts": [
+        "What color will your baby's eyes be? EyeColor family tree",
+        "Genetic eye color prediction with percentages",
+        "Set up the family tree with parents and grandparents",
+        "Result with odds of brown, green and blue eyes"
+      ],
+      "articleTitle": "How is eye color inherited?",
+      "article": [
+        "Eye color isn't decided by a single gene but by several (it's a polygenic trait), although a few of them carry a lot of weight. That's why it comes down to odds: two brown-eyed parents can have a blue-eyed baby if both carry the variant for light eyes, and light-eyed grandparents make that more likely.",
+        "Many babies are also born with lighter eyes than they'll end up having: the final color usually settles during the first year. EyeColor uses a simplified model to give you a fun, rough estimate, not a medical result."
+      ],
+      "faq": [
+        [
+          "How does EyeColor predict my baby's eye color?",
+          "It uses a simplified model based on Mendelian genetics and polygenic inheritance: from the parents' eye colors, and the grandparents' if you add them, it works out the odds of brown, green and blue eyes."
+        ],
+        [
+          "Is the result accurate?",
+          "It's a rough estimate for entertainment and education. Eye color depends on many genes and can change during the first year, so no calculator can guarantee it."
+        ],
+        [
+          "Why add the grandparents?",
+          "Because they reveal which variants the parents may carry even if they don't show in their eyes. With them, the result is much more accurate."
+        ],
+        [
+          "Is my data safe?",
+          "Yes. No sign-up or personal data is needed: every calculation runs on your device."
+        ],
+        [
+          "Is it available on Android?",
+          "Yes. EyeColor is free on the App Store for iPhone and iPad and on Google Play for Android."
+        ]
+      ],
+      "note": "EyeColor is an interactive tool for entertainment and educational purposes, based on standard genetic probability models.",
+      "cta": "Discover your baby's eyes"
+    }
+  }
+}

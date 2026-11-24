@@ -30,7 +30,8 @@
     "en": {
       "category": "Game · Cozy",
       "pitch": "A cozy botanical retreat in your pocket: grow 24 species, collect plants and enjoy the calm at your own pace."
-    }
+    },
+    "page": "/CozyPlants/"
   },
   {
     "slug": "dogweight",
@@ -46,7 +47,8 @@
     "en": {
       "category": "Health · Pets",
       "pitch": "Track your dogs' weight and growth over time, simply and visually."
-    }
+    },
+    "page": "/DogWeight/"
   },
   {
     "slug": "eyecolor",
@@ -62,6 +64,7 @@
     "en": {
       "category": "Lifestyle · Family",
       "pitch": "Find out the genetic odds of your future baby's eye color from the family's own."
-    }
+    },
+    "page": "/BabyEyeColor/"
   }
 ]

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>¿De qué color tendrá los ojos mi bebé? Calculadora EyeColor</title>
+<meta name="description" content="Calcula la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules según los ojos de los padres y los abuelos. App gratis para iPhone y Android.">
+<link rel="canonical" href="https://redpolasapps.fyi/BabyEyeColor/">
+<link rel="alternate" hreflang="es" href="https://redpolasapps.fyi/BabyEyeColor/">
+<link rel="alternate" hreflang="en" href="https://redpolasapps.fyi/BabyEyeColor/en/">
+<link rel="alternate" hreflang="x-default" href="https://redpolasapps.fyi/BabyEyeColor/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Redpolas Apps">
+<meta property="og:title" content="¿De qué color tendrá los ojos mi bebé? Calculadora EyeColor">
+<meta property="og:description" content="Calcula la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules según los ojos de los padres y los abuelos. App gratis para iPhone y Android.">
+<meta property="og:url" content="https://redpolasapps.fyi/BabyEyeColor/">
+<meta property="og:image" content="https://redpolasapps.fyi/BabyEyeColor/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿De qué color tendrá los ojos mi bebé? Calculadora EyeColor">
+<meta name="twitter:description" content="Calcula la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules según los ojos de los padres y los abuelos. App gratis para iPhone y Android.">
+<meta name="twitter:image" content="https://redpolasapps.fyi/BabyEyeColor/img/og.jpg">
+<meta name="theme-color" content="#f6f9fd">
+<meta name="apple-itunes-app" content="app-id=6818159901">
+<link rel="icon" type="image/png" href="/assets/icons/eyecolor.png">
+<link rel="apple-touch-icon" href="/assets/icons/eyecolor.png">
+<link rel="preload" as="image" href="/BabyEyeColor/img/shot-es-1.jpg" fetchpriority="high">
+<style>
+  :root {
+    --bg: #f6f9fd; --surface: #ffffff; --ink: #16233d; --ink-2: #4f5d78; --line: #e1e8f3;
+    --c1: #2f73d9; --c1-dark: #1f58b0; --c2: #7a4b2a; --soft: #e8f1fd;
+    --radius: 22px;
+    --heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 30px rgba(0,0,0,.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { font-family: var(--body); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding-left: max(22px, env(safe-area-inset-left, 0px)); padding-right: max(22px, env(safe-area-inset-right, 0px)); }
+
+  .top { position: absolute; top: 0; left: 0; right: 0; z-index: 5; padding-top: env(safe-area-inset-top, 0px); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .studio { display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: .9rem; font-weight: 600; color: var(--ink-2); }
+  .studio svg { width: 26px; height: 26px; }
+  .langs { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: rgba(255,255,255,.75); }
+  .langs a { font-size: .76rem; font-weight: 700; letter-spacing: .04em; padding: 4px 10px; border-radius: 999px; color: var(--ink-2); text-decoration: none; }
+  .langs a.on { background: var(--ink); color: #fff; }
+
+  .hero { background: radial-gradient(circle at 1px 1px, #d6e2f3 1px, transparent 0) 0 0 / 18px 18px, linear-gradient(180deg, #f2f7fe 0%, #f6f9fd 100%); padding: calc(96px + env(safe-area-inset-top, 0px)) 0 72px; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  .app-id { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .app-id img { width: 72px; height: 72px; border-radius: 17px; box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 8px 20px rgba(0,0,0,.14); }
+  .app-id b { display: block; font-size: 1.05rem; line-height: 1.25; }
+  .app-id span { font-size: .85rem; color: var(--ink-2); }
+  h1 { font-family: var(--heading); font-size: clamp(2.3rem, 5.4vw, 3.8rem); line-height: 1.04; letter-spacing: -.03em; font-weight: 800; text-wrap: balance; }
+  .lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--ink-2); margin-top: 18px; max-width: 33em; text-wrap: pretty; }
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .store {
+    display: inline-flex; align-items: center; gap: 11px; background: #000; color: #fff; text-decoration: none;
+    border-radius: 13px; padding: 9px 18px 9px 14px; min-height: 54px; transition: transform .15s ease;
+  }
+  .store:hover { transform: translateY(-1px); }
+  .store svg { width: 26px; height: 26px; flex: none; }
+  .store small { display: block; font-size: .7rem; opacity: .85; line-height: 1.1; }
+  .store strong { display: block; font-size: 1.18rem; line-height: 1.15; letter-spacing: -.01em; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .fact { font-size: .82rem; font-weight: 600; color: var(--ink-2); background: rgba(255,255,255,.8); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+
+  .phones { position: relative; justify-self: center; width: min(400px, 92%); aspect-ratio: 4 / 5; }
+  .phones img { position: absolute; width: 58%; border-radius: 28px; box-shadow: 0 2px 6px rgba(0,0,0,.08), 0 26px 50px rgba(0,0,0,.2); }
+  .phones .p1 { left: 4%; top: 0; z-index: 2; transform: rotate(-4deg); }
+  .phones .p2 { right: 2%; top: 9%; transform: rotate(5deg); opacity: .96; }
+
+  section { padding: 76px 0; }
+  .kicker { font-size: .78rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--c1); margin-bottom: 8px; }
+  h2 { font-family: var(--heading); font-size: clamp(1.7rem, 3.4vw, 2.4rem); letter-spacing: -.025em; line-height: 1.1; font-weight: 800; text-wrap: balance; margin-bottom: 28px; max-width: 22em; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; counter-reset: step; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: relative; min-width: 0; }
+  .step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--c1); color: #fff; font-weight: 800; margin-bottom: 14px; }
+  .step h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .step p { color: var(--ink-2); font-size: .95rem; }
+
+  .demo { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); padding: 36px; box-shadow: var(--shadow); }
+  .bars { display: grid; gap: 14px; }
+  .bar b { display: flex; justify-content: space-between; font-size: .95rem; margin-bottom: 6px; }
+  .bar i { display: block; height: 12px; border-radius: 999px; background: #eef2f8; overflow: hidden; }
+  .bar i::after { content: ""; display: block; height: 100%; width: var(--w); background: var(--col); border-radius: 999px; }
+  .eyes { display: flex; gap: 18px; justify-content: center; }
+  .eye { width: 86px; height: 86px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #111 0 18%, var(--col) 19% 58%, #fff 59%); box-shadow: inset 0 0 0 3px rgba(0,0,0,.06), 0 6px 16px rgba(0,0,0,.08); }
+  .demo .caption { font-size: .82rem; color: var(--ink-2); margin-top: 14px; }
+
+  .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .features.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); min-width: 0; }
+  .feature .ico { width: 48px; height: 48px; border-radius: 14px; background: var(--soft); display: grid; place-items: center; font-size: 1.45rem; margin-bottom: 14px; }
+  .feature h3 { font-size: 1.06rem; margin-bottom: 6px; letter-spacing: -.01em; }
+  .feature p { color: var(--ink-2); font-size: .95rem; }
+
+  .gallery { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(170px, 1fr); gap: 18px; overflow-x: auto; padding: 4px 2px 16px; scroll-snap-type: x mandatory; }
+  .gallery figure { scroll-snap-align: start; }
+  .gallery img { width: 100%; border-radius: 22px; box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 10px 24px rgba(0,0,0,.1); background: var(--soft); }
+
+  .article { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; align-items: start; }
+  .article p { color: var(--ink-2); font-size: 1.02rem; margin-bottom: 14px; max-width: 38em; }
+
+  .faq { display: grid; gap: 10px; max-width: 820px; }
+  .faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 4px 20px; }
+  .faq summary { cursor: pointer; list-style: none; font-weight: 700; padding: 14px 0; display: flex; justify-content: space-between; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--c1); font-size: 1.3rem; line-height: 1; transition: transform .2s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { color: var(--ink-2); padding: 0 0 16px; }
+  .note { margin-top: 22px; font-size: .86rem; color: var(--ink-2); background: var(--soft); border-radius: 14px; padding: 14px 18px; max-width: 820px; }
+
+  .final { text-align: center; }
+  .final .card { background: var(--c1); color: #fff; border-radius: calc(var(--radius) + 8px); padding: 52px 26px; }
+  .final h2 { color: #fff; margin: 0 auto 8px; }
+  .final p { color: rgba(255,255,255,.85); }
+  .final .stores { justify-content: center; }
+  .final img { width: 84px; height: 84px; border-radius: 20px; margin: 0 auto 18px; box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+
+  footer { padding: 36px 0 calc(36px + env(safe-area-inset-bottom, 0px)); color: var(--ink-2); font-size: .88rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 26px; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 24px; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--ink); text-decoration: underline; }
+
+  @media (max-width: 880px) {
+    .hero-grid, .demo, .article { grid-template-columns: 1fr; }
+    .phones { width: min(340px, 86%); margin-top: 6px; }
+    .steps, .features { grid-template-columns: 1fr; }
+    .features.four { grid-template-columns: 1fr; }
+    .demo { padding: 26px; }
+  }
+  @media (max-width: 560px) {
+    .gallery { grid-auto-columns: 64%; }
+    section { padding: 56px 0; }
+    .hero { padding-bottom: 52px; }
+  }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "EyeColor: Predictor Ojos Bebé", "description": "Calcula la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules según los ojos de los padres y los abuelos. App gratis para iPhone y Android.", "url": "https://redpolasapps.fyi/BabyEyeColor/", "image": "https://redpolasapps.fyi/BabyEyeColor/img/og.jpg", "screenshot": ["https://redpolasapps.fyi/BabyEyeColor/img/shot-es-1.jpg", "https://redpolasapps.fyi/BabyEyeColor/img/shot-es-2.jpg", "https://redpolasapps.fyi/BabyEyeColor/img/shot-es-3.jpg", "https://redpolasapps.fyi/BabyEyeColor/img/shot-es-4.jpg"], "operatingSystem": "iOS 17.0 or later, Android", "applicationCategory": "LifestyleApplication", "inLanguage": ["es", "en", "fr", "de", "pt"], "installUrl": "https://apps.apple.com/app/id6818159901", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Víctor M. García Ortega"}, "publisher": {"@type": "Organization", "name": "Redpolas Apps", "url": "https://redpolasapps.fyi/"}, "sameAs": ["https://apps.apple.com/app/id6818159901", "https://play.google.com/store/apps/details?id=com.redpolasapps.babyeyecolor"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo calcula EyeColor el color de ojos del bebé?", "acceptedAnswer": {"@type": "Answer", "text": "Usa un modelo simplificado basado en la genética mendeliana y la herencia poligénica: a partir del color de ojos de los padres, y de los abuelos si los añades, calcula la probabilidad de ojos marrones, verdes y azules."}}, {"@type": "Question", "name": "¿Es fiable el resultado?", "acceptedAnswer": {"@type": "Answer", "text": "Es una estimación orientativa con fines recreativos y educativos. El color de ojos depende de muchos genes y puede cambiar durante el primer año de vida, así que ninguna calculadora puede asegurarlo."}}, {"@type": "Question", "name": "¿Por qué añadir a los abuelos?", "acceptedAnswer": {"@type": "Answer", "text": "Porque los abuelos indican qué variantes pueden llevar los padres aunque no se vean en sus ojos. Con ellos, el cálculo es mucho más preciso."}}, {"@type": "Question", "name": "¿Mis datos están seguros?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. No hace falta registrarse ni introducir datos personales: todos los cálculos se hacen en tu dispositivo."}}, {"@type": "Question", "name": "¿Está para Android?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. EyeColor está gratis en la App Store para iPhone y iPad y en Google Play para Android."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Redpolas Apps", "item": "https://redpolasapps.fyi/"}, {"@type": "ListItem", "position": 2, "name": "EyeColor: Predictor Ojos Bebé", "item": "https://redpolasapps.fyi/BabyEyeColor/"}]}</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="studio" href="/">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#e5483b"/><path d="M22 46V24.5c0-1.4 1.1-2.5 2.5-2.5h9.2c5.6 0 9.3 3.3 9.3 8.2 0 3.9-2.4 6.7-6.1 7.7L43.6 46" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="19" r="4.2" fill="#ffd2c9"/></svg>
+      Redpolas Apps
+    </a>
+    <nav class="langs" aria-label="Idioma / Language"><a class="on" aria-current="page" href="/BabyEyeColor/">ES</a><a href="/BabyEyeColor/en/" hreflang="en">EN</a></nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="app-id">
+          <img src="/assets/icons/eyecolor.png" alt="Icono de EyeColor: Predictor Ojos Bebé" width="72" height="72">
+          <div><b>EyeColor: Predictor Ojos Bebé</b><span>Estilo de vida · Familia</span></div>
+        </div>
+        <h1>¿De qué color tendrá los ojos tu bebé?</h1>
+        <p class="lead">EyeColor calcula en segundos la probabilidad de que tu bebé tenga los ojos marrones, verdes o azules a partir de los ojos de sus padres y, si quieres, de sus abuelos.</p>
+        <div class="stores"><a class="store" href="https://apps.apple.com/es/app/id6818159901" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg><span><small>Descárgala en la</small><strong>App Store</strong></span></a><a class="store" href="https://play.google.com/store/apps/details?id=com.redpolasapps.babyeyecolor&amp;hl=es" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 2.6 13.5 12l-9.3 9.4c-.3-.2-.5-.6-.5-1.1V3.7c0-.5.2-.9.5-1.1z" fill="#2196f3"/><path d="m16.6 8.9-3.1 3.1-9.3-9.4c.3-.2.8-.2 1.2 0z" fill="#4caf50"/><path d="m16.6 15.1-11.2 6.3c-.4.2-.9.2-1.2 0l9.3-9.4z" fill="#f44336"/><path d="m20.2 10.9-3.6-2-3.1 3.1 3.1 3.1 3.6-2c.8-.5.8-1.7 0-2.2z" fill="#ffc107"/></svg><span><small>Disponible en</small><strong>Google Play</strong></span></a></div>
+        <div class="facts"><span class="fact">Gratis</span><span class="fact">iPhone, iPad y Android</span><span class="fact">Sin registro</span><span class="fact">5 idiomas</span></div>
+      </div>
+      <div class="phones">
+        <img class="p1" src="/BabyEyeColor/img/shot-es-1.jpg" alt="¿Qué color de ojos tendrá tu bebé? Árbol familiar de EyeColor" width="600" height="1304" fetchpriority="high">
+        <img class="p2" src="/BabyEyeColor/img/shot-es-2.jpg" alt="Predicción genética del color de ojos con porcentajes" width="600" height="1304">
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-bottom: 0;">
+    <div class="wrap">
+      <div class="demo">
+        <div class="eyes" aria-hidden="true"><span class="eye" style="--col:#7a4b2a"></span><span class="eye" style="--col:#4f9a5a"></span><span class="eye" style="--col:#3f86e0"></span></div>
+        <div><p class="kicker">Ejemplo de resultado</p><div class="bars"><div class="bar" style="--w:50%;--col:#7a4b2a"><b><span>Marrones</span><span>50%</span></b><i></i></div><div class="bar" style="--w:38%;--col:#4f9a5a"><b><span>Verdes</span><span>38%</span></b><i></i></div><div class="bar" style="--w:12%;--col:#3f86e0"><b><span>Azules</span><span>12%</span></b><i></i></div></div><p class="caption">Porcentajes de ejemplo. El tuyo depende de los ojos de tu familia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="kicker">Paso a paso</p>
+      <h2>Cómo funciona</h2>
+      <div class="steps"><div class="step"><h3>Configura a los padres</h3><p>Elige el color de ojos de la madre y del padre.</p></div><div class="step"><h3>Añade a los abuelos</h3><p>Opcional: con los abuelos maternos y paternos el cálculo es mucho más preciso.</p></div><div class="step"><h3>Mira el resultado</h3><p>Pulsa calcular y verás al instante el porcentaje de ojos marrones, verdes y azules.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="kicker">Funciones</p>
+      <h2>Pensada para futuras mamás y papás</h2>
+      <div class="features four"><article class="feature"><div class="ico" aria-hidden="true">🌳</div><h3>Árbol familiar visual</h3><p>Configura a padres y abuelos con un solo toque.</p></article><article class="feature"><div class="ico" aria-hidden="true">🧬</div><h3>Basada en la genética</h3><p>Un modelo simplificado de herencia mendeliana y poligénica.</p></article><article class="feature"><div class="ico" aria-hidden="true">📊</div><h3>Porcentajes claros</h3><p>Probabilidad de ojos azules, verdes y marrones con un gráfico sencillo.</p></article><article class="feature"><div class="ico" aria-hidden="true">🔒</div><h3>Privacidad total</h3><p>Sin registro ni datos sensibles: todo se calcula en tu dispositivo.</p></article></div>
+    </div>
+  </section>
+
+  <section style="padding-top: 8px;">
+    <div class="wrap">
+      <p class="kicker">Capturas</p>
+      <h2>Así es EyeColor</h2>
+      <div class="gallery"><figure><img src="/BabyEyeColor/img/shot-es-1.jpg" alt="¿Qué color de ojos tendrá tu bebé? Árbol familiar de EyeColor" width="600" height="1304" loading="lazy"></figure><figure><img src="/BabyEyeColor/img/shot-es-2.jpg" alt="Predicción genética del color de ojos con porcentajes" width="600" height="1304" loading="lazy"></figure><figure><img src="/BabyEyeColor/img/shot-es-3.jpg" alt="Configura el árbol familiar con padres y abuelos" width="600" height="1304" loading="lazy"></figure><figure><img src="/BabyEyeColor/img/shot-es-4.jpg" alt="Resultado con porcentajes de ojos marrones, verdes y azules" width="600" height="1304" loading="lazy"></figure></div>
+    </div>
+  </section>
+
+  <section style="padding-top: 8px;">
+    <div class="wrap article">
+      <h2>¿Cómo se hereda el color de ojos?</h2>
+      <div><p>El color de ojos no depende de un solo gen, sino de varios (es un rasgo poligénico), aunque unos pocos tienen mucho peso. Por eso se habla de probabilidades: dos padres con ojos marrones pueden tener un bebé con ojos azules si ambos llevan la variante para ojos claros, y que los abuelos tengan ojos claros aumenta esa probabilidad.</p><p>Además, muchos bebés nacen con los ojos más claros de lo que los tendrán después: el color definitivo suele asentarse durante el primer año de vida. EyeColor usa un modelo simplificado para darte una estimación orientativa y divertida, no un resultado médico.</p></div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top: 8px;">
+    <div class="wrap">
+      <p class="kicker">FAQ</p>
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq"><details><summary>¿Cómo calcula EyeColor el color de ojos del bebé?</summary><p>Usa un modelo simplificado basado en la genética mendeliana y la herencia poligénica: a partir del color de ojos de los padres, y de los abuelos si los añades, calcula la probabilidad de ojos marrones, verdes y azules.</p></details><details><summary>¿Es fiable el resultado?</summary><p>Es una estimación orientativa con fines recreativos y educativos. El color de ojos depende de muchos genes y puede cambiar durante el primer año de vida, así que ninguna calculadora puede asegurarlo.</p></details><details><summary>¿Por qué añadir a los abuelos?</summary><p>Porque los abuelos indican qué variantes pueden llevar los padres aunque no se vean en sus ojos. Con ellos, el cálculo es mucho más preciso.</p></details><details><summary>¿Mis datos están seguros?</summary><p>Sí. No hace falta registrarse ni introducir datos personales: todos los cálculos se hacen en tu dispositivo.</p></details><details><summary>¿Está para Android?</summary><p>Sí. EyeColor está gratis en la App Store para iPhone y iPad y en Google Play para Android.</p></details></div>
+      <p class="note">EyeColor es una herramienta interactiva con fines recreativos y educativos basada en modelos estándar de probabilidad genética.</p>
+    </div>
+  </section>
+
+  <section class="final" style="padding-top: 8px;">
+    <div class="wrap">
+      <div class="card">
+        <img src="/assets/icons/eyecolor.png" alt="" width="84" height="84" loading="lazy">
+        <h2>Descubre los ojos de tu bebé</h2>
+        <p>Gratis en la App Store y en Google Play</p>
+        <div class="stores"><a class="store" href="https://apps.apple.com/es/app/id6818159901" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg><span><small>Descárgala en la</small><strong>App Store</strong></span></a><a class="store" href="https://play.google.com/store/apps/details?id=com.redpolasapps.babyeyecolor&amp;hl=es" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.2 2.6 13.5 12l-9.3 9.4c-.3-.2-.5-.6-.5-1.1V3.7c0-.5.2-.9.5-1.1z" fill="#2196f3"/><path d="m16.6 8.9-3.1 3.1-9.3-9.4c.3-.2.8-.2 1.2 0z" fill="#4caf50"/><path d="m16.6 15.1-11.2 6.3c-.4.2-.9.2-1.2 0l9.3-9.4z" fill="#f44336"/><path d="m20.2 10.9-3.6-2-3.1 3.1 3.1 3.1 3.6-2c.8-.5.8-1.7 0-2.2z" fill="#ffc107"/></svg><span><small>Disponible en</small><strong>Google Play</strong></span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Víctor M. García Ortega · <a href="/">Redpolas Apps</a></span>
+    <nav>
+      <a href="/BabyEyeColor/privacy.html">Política de privacidad</a>
+      <a href="mailto:redpolasapps@gmail.com">Soporte: redpolasapps@gmail.com</a>
+      <a href="/#apps">Más apps</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
