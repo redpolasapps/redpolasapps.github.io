@@ -115,6 +115,11 @@ def app_cards(apps, lang):
             links.append(f'<a class="btn {"btn-ghost" if a.get("page") else "btn-primary"}" href="{e(store)}" rel="noopener">'
                          f'<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg>'
                          f'App Store</a>')
+        if a.get('playStore'):
+            hl = 'es' if lang == 'es' else 'en'
+            links.append(f'<a class="btn btn-ghost" href="{e(a["playStore"])}&amp;hl={hl}" rel="noopener">'
+                         f'<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4.2 2.6 13.5 12l-9.3 9.4c-.3-.2-.5-.6-.5-1.1V3.7c0-.5.2-.9.5-1.1z" fill="#2196f3"/><path d="m16.6 8.9-3.1 3.1-9.3-9.4c.3-.2.8-.2 1.2 0z" fill="#4caf50"/><path d="m16.6 15.1-11.2 6.3c-.4.2-.9.2-1.2 0l9.3-9.4z" fill="#f44336"/><path d="m20.2 10.9-3.6-2-3.1 3.1 3.1 3.1 3.6-2c.8-.5.8-1.7 0-2.2z" fill="#ffc107"/></svg>'
+                         f'Google Play</a>')
         links.append(f'<a class="btn btn-link" href="{e(a["privacy"])}">{"Privacidad" if lang == "es" else "Privacy"}</a>')
         cards.append(f'''        <article class="app" id="{e(a['slug'])}">
           <img class="app-icon" src="/assets/icons/{e(a['slug'])}.png" alt="{e(a['name'])}" width="96" height="96" loading="lazy">
@@ -145,6 +150,9 @@ def apps_jsonld(apps, lang):
         }
         if a.get('game'):
             app['gamePlatform'] = 'iOS'
+        if a.get('playStore'):
+            app['operatingSystem'] = 'iOS, Android'
+            app['sameAs'] = [a['playStore']]
         if a.get('status') == 'live' and a.get('appStoreId'):
             app['url'] = f"https://apps.apple.com/app/id{a['appStoreId']}"
             app['offers'] = {'@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR'}
@@ -328,16 +336,17 @@ def main():
     # home
     home_meta = {
         'image': '/assets/og-home.jpg',
-        'es': {'title': 'Redpolas Apps · Apps y juegos para iPhone y iPad',
-               'description': 'Estudio independiente de apps y juegos para iPhone y iPad: The Line Tycoon, Cozy Plants, DogWeight y EyeColor. Soporte, contacto y políticas de privacidad.'},
-        'en': {'title': 'Redpolas Apps · Apps and games for iPhone and iPad',
-               'description': 'Independent studio making apps and games for iPhone and iPad: The Line Tycoon, Cozy Plants, DogWeight and EyeColor. Support, contact and privacy policies.'},
+        'es': {'title': 'Redpolas Apps · Apps y juegos para iPhone, iPad y Android',
+               'description': 'Estudio independiente de apps y juegos para iPhone, iPad y Android: The Line Tycoon, Cozy Plants, DogWeight y EyeColor. Soporte, contacto y privacidad.'},
+        'en': {'title': 'Redpolas Apps · Apps and games for iPhone, iPad and Android',
+               'description': 'Independent studio making apps and games for iPhone, iPad and Android: The Line Tycoon, Cozy Plants, DogWeight and EyeColor. Support, contact and privacy.'},
     }
 
     def home_ld(lang):
         data = [{
             '@context': 'https://schema.org', '@type': 'Organization', 'name': 'Redpolas Apps', 'url': SITE + '/',
             'logo': SITE + '/assets/logo.png', 'email': 'redpolasapps@gmail.com',
+            'sameAs': ['https://apps.apple.com/developer/id6818159903', 'https://play.google.com/store/apps/developer?id=redpolasapps'],
             'founder': {'@type': 'Person', 'name': 'Víctor M. García Ortega'},
         }, {
             '@context': 'https://schema.org', '@type': 'ItemList',
