@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://redpolasapps.fyi/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://redpolasapps.fyi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://redpolasapps.fyi/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://redpolasapps.fyi/en/"/>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://redpolasapps.fyi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://redpolasapps.fyi/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://redpolasapps.fyi/en/"/>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/LineTycoon/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://redpolasapps.fyi/LineTycoon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://redpolasapps.fyi/LineTycoon/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://redpolasapps.fyi/LineTycoon/en/"/>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/LineTycoon/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://redpolasapps.fyi/LineTycoon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://redpolasapps.fyi/LineTycoon/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://redpolasapps.fyi/LineTycoon/en/"/>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/LineTycoon/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/CozyPlants/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/DogWeight/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://redpolasapps.fyi/BabyEyeColor/privacy.html</loc>
+  </url>
+</urlset>

@@ -3,15 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>The Line Tycoon</title>
-<meta name="description" content="The Line Tycoon: el juego de parque de atracciones en el que lo tuyo son las colas. Dibuja la cola, cruza puentes y vagonetas y sube a toda la multitud a la montaña rusa. Para iPhone y iPad.">
-<meta name="theme-color" content="#1f3fae">
-<link rel="icon" type="image/png" href="img/icon.png">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<meta property="og:title" content="The Line Tycoon">
-<meta property="og:description" content="Thousands of guests. One gate. Total chaos… until you draw the line. A theme park game for iPhone and iPad.">
-<meta property="og:image" content="https://redpolasapps.fyi/LineTycoon/img/hero.jpg">
+<title>The Line Tycoon: juego de parque de atracciones y colas para iPhone y iPad</title>
+<meta name="description" content="Dibuja colas, cruza puentes y vagonetas y sube a toda la multitud a la montaña rusa. 7 atracciones, 21 estrellas y 30 visitantes secretos. Gratis, sin internet, para iPhone y iPad.">
+<link rel="canonical" href="https://redpolasapps.fyi/LineTycoon/">
+<link rel="alternate" hreflang="es" href="https://redpolasapps.fyi/LineTycoon/">
+<link rel="alternate" hreflang="en" href="https://redpolasapps.fyi/LineTycoon/en/">
+<link rel="alternate" hreflang="x-default" href="https://redpolasapps.fyi/LineTycoon/en/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Redpolas Apps">
+<meta property="og:title" content="The Line Tycoon: juego de parque de atracciones y colas para iPhone y iPad">
+<meta property="og:description" content="Dibuja colas, cruza puentes y vagonetas y sube a toda la multitud a la montaña rusa. 7 atracciones, 21 estrellas y 30 visitantes secretos. Gratis, sin internet, para iPhone y iPad.">
+<meta property="og:url" content="https://redpolasapps.fyi/LineTycoon/">
+<meta property="og:image" content="https://redpolasapps.fyi/LineTycoon/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Line Tycoon: juego de parque de atracciones y colas para iPhone y iPad">
+<meta name="twitter:description" content="Dibuja colas, cruza puentes y vagonetas y sube a toda la multitud a la montaña rusa. 7 atracciones, 21 estrellas y 30 visitantes secretos. Gratis, sin internet, para iPhone y iPad.">
+<meta name="twitter:image" content="https://redpolasapps.fyi/LineTycoon/img/og.jpg">
+<meta name="theme-color" content="#1f3fae">
+<link rel="icon" type="image/png" href="/LineTycoon/img/icon.png">
+<link rel="apple-touch-icon" href="/LineTycoon/img/apple-touch-icon.png">
+<link rel="preload" as="image" href="/LineTycoon/img/shot-es-2.jpg" fetchpriority="high">
+
 <meta name="apple-itunes-app" content="app-id=6835385812">
 <style>
   :root {
@@ -43,9 +59,6 @@
   img { max-width: 100%; height: auto; display: block; }
   a { color: inherit; }
 
-  /* only the chosen language shows (Spanish without JavaScript) */
-  html.es [lang="en"]:not(html), html.en [lang="es"]:not(html) { display: none !important; }
-
   .wrap {
     max-width: 1080px;
     margin: 0 auto;
@@ -62,12 +75,13 @@
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-family: var(--round); font-weight: 900; font-size: 1.05rem; letter-spacing: .01em; }
   .brand img { width: 34px; height: 34px; border-radius: 9px; border: 2px solid #fff; }
   .langs { display: flex; gap: 6px; }
-  .langs button {
+  .langs a {
     font: 800 .8rem var(--round); letter-spacing: .06em;
     color: #fff; background: rgba(255,255,255,.14); border: 2px solid rgba(255,255,255,.5);
     border-radius: 999px; padding: 5px 12px; cursor: pointer;
   }
-  .langs button[aria-pressed="true"] { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
+  .langs a { text-decoration: none; }
+  .langs a.on { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
 
   /* ---------- hero ---------- */
   .hero {
@@ -229,16 +243,17 @@
     section { padding: 56px 0; }
   }
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "The Line Tycoon", "alternateName": "The Line Tycoon: Theme Park", "description": "Dibuja colas, cruza puentes y vagonetas y sube a toda la multitud a la montaña rusa. 7 atracciones, 21 estrellas y 30 visitantes secretos. Gratis, sin internet, para iPhone y iPad.", "url": "https://redpolasapps.fyi/LineTycoon/", "image": "https://redpolasapps.fyi/LineTycoon/img/og.jpg", "screenshot": ["https://redpolasapps.fyi/LineTycoon/img/shot-es-1.jpg", "https://redpolasapps.fyi/LineTycoon/img/shot-es-2.jpg", "https://redpolasapps.fyi/LineTycoon/img/shot-es-3.jpg", "https://redpolasapps.fyi/LineTycoon/img/shot-es-4.jpg", "https://redpolasapps.fyi/LineTycoon/img/shot-es-5.jpg"], "gamePlatform": ["iPhone", "iPad"], "operatingSystem": "iOS 17.0 or later", "applicationCategory": "GameApplication", "genre": ["Simulation", "Strategy", "Casual"], "inLanguage": ["es", "en", "fr", "de", "pt"], "author": {"@type": "Person", "name": "Víctor M. García Ortega"}, "publisher": {"@type": "Organization", "name": "Redpolas Apps", "url": "https://redpolasapps.fyi/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}</script>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="img/icon.png" alt="" width="34" height="34">The Line Tycoon</a>
-    <div class="langs" role="group" aria-label="Language">
-      <button type="button" data-lang="es" aria-pressed="true">ES</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
+    <a class="brand" href="#top"><img src="/LineTycoon/img/icon.png" alt="" width="34" height="34">The Line Tycoon</a>
+    <nav class="langs" aria-label="Idioma / Language">
+      <a aria-current="page" class="on" href="/LineTycoon/">ES</a><a href="/LineTycoon/en/" hreflang="en">EN</a>
+
+    </nav>
   </div>
 </header>
 
@@ -247,55 +262,55 @@
   <div class="hero">
     <div class="wrap hero-grid">
       <div>
-        <img class="app-icon" src="img/icon.png" alt="The Line Tycoon" width="96" height="96">
-        <div class="kicker"><span lang="es">Juego de parque de atracciones</span><span lang="en">Theme park game</span></div>
+        <img class="app-icon" src="/LineTycoon/img/icon.png" alt="The Line Tycoon" width="96" height="96">
+        <div class="kicker"><span>Juego de parque de atracciones</span></div>
         <h1>
-          <span lang="es">Dibuja la cola.<span class="white">Domina el parque.</span></span>
-          <span lang="en">Draw the line.<span class="white">Run the park.</span></span>
+          <span>Dibuja la cola.<span class="white">Domina el parque.</span></span>
+
         </h1>
         <p class="tagline">
-          <span lang="es">Miles de visitantes. Una sola puerta. El caos… hasta que tú dibujas la cola. Las atracciones ya están construidas: lo tuyo es que todo el mundo suba antes de que se le acabe la paciencia.</span>
-          <span lang="en">Thousands of guests. One gate. Total chaos… until you draw the line. The rides are already built: your job is getting everyone on before their patience runs out.</span>
+          <span>Miles de visitantes. Una sola puerta. El caos… hasta que tú dibujas la cola. Las atracciones ya están construidas: lo tuyo es que todo el mundo suba antes de que se le acabe la paciencia.</span>
+
         </p>
         <div class="cta-row">
           <span class="store-badge soon" aria-label="App Store">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg>
-            <span><small><span lang="es">Muy pronto en la</span><span lang="en">Coming soon on the</span></small><strong>App Store</strong></span>
+            <span><small><span>Muy pronto en la</span></small><strong>App Store</strong></span>
           </span>
         </div>
         <div class="facts">
-          <span class="chip"><span lang="es">Gratis para jugar</span><span lang="en">Free to play</span></span>
-          <a class="chip chip-premium" href="#premium"><span lang="es">👑 Premium: crea tu parque</span><span lang="en">👑 Premium: build your park</span></a>
-          <span class="chip"><span lang="es">Juega sin internet</span><span lang="en">Plays offline</span></span>
+          <span class="chip"><span>Gratis para jugar</span></span>
+          <a class="chip chip-premium" href="#premium"><span>👑 Premium: crea tu parque</span></a>
+          <span class="chip"><span>Juega sin internet</span></span>
           <span class="chip">iPhone · iPad</span>
-          <span class="chip"><span lang="es">Sin banners</span><span lang="en">No banners</span></span>
+          <span class="chip"><span>Sin banners</span></span>
         </div>
       </div>
       <div class="hero-phone">
-        <img lang="es" src="img/shot-es-2.jpg" alt="Pantalla del juego: diseña tus colas con puentes y vagonetas" width="506" height="1100">
-        <img lang="en" src="img/shot-en-2.jpg" alt="Game screen: design your lines with bridges and mine carts" width="506" height="1100" loading="lazy">
+        <img src="/LineTycoon/img/shot-es-2.jpg" alt="The Line Tycoon en iPhone: diseña tus colas con puentes y vagonetas" width="506" height="1100" fetchpriority="high">
+
       </div>
     </div>
     <div class="hero-band">
-      <img src="img/hero.jpg" alt="" width="1920" height="823">
+      <img src="/LineTycoon/img/hero.jpg" alt="" width="1600" height="686" loading="lazy">
     </div>
   </div>
 
   <!-- SCREENSHOTS -->
   <section>
     <div class="wrap">
-      <p class="eyebrow"><span lang="es">Así se juega</span><span lang="en">How it plays</span></p>
-      <h2><span lang="es">Traza la cola con el dedo</span><span lang="en">Trace the line with one finger</span></h2>
+      <p class="eyebrow"><span>Así se juega</span></p>
+      <h2><span>Traza la cola con el dedo</span></h2>
       <p class="lead">
-        <span lang="es">Postes y cuerdas, zigzags, puentes sobre el río, vagonetas por la selva y túneles bajo el templo. Tú dibujas el camino y la multitud se ordena sola.</span>
-        <span lang="en">Posts and ropes, zigzags, bridges over the river, mine carts through the jungle and tunnels under the temple. You draw the path and the crowd falls into place.</span>
+        <span>Postes y cuerdas, zigzags, puentes sobre el río, vagonetas por la selva y túneles bajo el templo. Tú dibujas el camino y la multitud se ordena sola.</span>
+
       </p>
       <div class="shots">
-        <figure><img lang="es" src="img/shot-es-1.jpg" alt="Miles de prisas" loading="lazy" width="506" height="1100"><img lang="en" src="img/shot-en-1.jpg" alt="Thousands in a hurry" loading="lazy" width="506" height="1100"></figure>
-        <figure><img lang="es" src="img/shot-es-2.jpg" alt="Diseña tus colas" loading="lazy" width="506" height="1100"><img lang="en" src="img/shot-en-2.jpg" alt="Design your lines" loading="lazy" width="506" height="1100"></figure>
-        <figure><img lang="es" src="img/shot-es-3.jpg" alt="Cada cliente, un drama" loading="lazy" width="506" height="1100"><img lang="en" src="img/shot-en-3.jpg" alt="Every guest is a drama" loading="lazy" width="506" height="1100"></figure>
-        <figure><img lang="es" src="img/shot-es-4.jpg" alt="Míralo con sus ojos" loading="lazy" width="506" height="1100"><img lang="en" src="img/shot-en-4.jpg" alt="See it through their eyes" loading="lazy" width="506" height="1100"></figure>
-        <figure><img lang="es" src="img/shot-es-5.jpg" alt="Tu parque, tus reglas" loading="lazy" width="506" height="1100"><img lang="en" src="img/shot-en-5.jpg" alt="Your park, your rules" loading="lazy" width="506" height="1100"></figure>
+        <figure><img src="/LineTycoon/img/shot-es-1.jpg" alt="Miles de visitantes con prisa en la entrada del parque" loading="lazy" width="506" height="1100"></figure>
+        <figure><img src="/LineTycoon/img/shot-es-2.jpg" alt="Diseña colas en zigzag con puentes y vagonetas" loading="lazy" width="506" height="1100"></figure>
+        <figure><img src="/LineTycoon/img/shot-es-3.jpg" alt="Peleas, colados y dormilones en la cola de la atracción" loading="lazy" width="506" height="1100"></figure>
+        <figure><img src="/LineTycoon/img/shot-es-4.jpg" alt="Modo primera persona: súbete a tu propia montaña rusa" loading="lazy" width="506" height="1100"></figure>
+        <figure><img src="/LineTycoon/img/shot-es-5.jpg" alt="Creador de parques Premium con edificios y atracciones" loading="lazy" width="506" height="1100"></figure>
       </div>
     </div>
   </section>
@@ -305,18 +320,18 @@
     <div class="wrap premium-grid">
       <div>
         <p class="eyebrow">Premium 👑</p>
-        <h2><span lang="es">Tu parque, tus reglas</span><span lang="en">Your park, your rules</span></h2>
-        <p class="lead"><span lang="es">El juego es gratis y completo. Premium es un pago único que abre el Creador de parques: diseña tus propios mapas y juega en ellos.</span><span lang="en">The game is free and complete. Premium is a one-time purchase that unlocks the park Creator: design your own maps and play them.</span></p>
+        <h2><span>Tu parque, tus reglas</span></h2>
+        <p class="lead"><span>El juego es gratis y completo. Premium es un pago único que abre el Creador de parques: diseña tus propios mapas y juega en ellos.</span></p>
         <ul class="ticks">
-          <li><span lang="es">Editor de parques y modo sandbox: tres tamaños de mapa, paredes, agua, fuentes y decoración.</span><span lang="en">Park editor and sandbox: three map sizes, walls, water, fountains and decorations.</span></li>
-          <li><span lang="es">10 modelos de atracción y edificios nuevos unidos por vías de vagonetas.</span><span lang="en">10 ride designs and extra buildings linked by mine-car tracks.</span></li>
-          <li><span lang="es">Sin anuncios y con recompensas al instante.</span><span lang="en">No ads and instant rewards.</span></li>
-          <li><span lang="es">Sin suscripciones. Compatible con En Familia.</span><span lang="en">No subscription. Family Sharing supported.</span></li>
+          <li><span>Editor de parques y modo sandbox: tres tamaños de mapa, paredes, agua, fuentes y decoración.</span></li>
+          <li><span>10 modelos de atracción y edificios nuevos unidos por vías de vagonetas.</span></li>
+          <li><span>Sin anuncios y con recompensas al instante.</span></li>
+          <li><span>Sin suscripciones. Compatible con En Familia.</span></li>
         </ul>
       </div>
       <div>
-        <img lang="es" src="img/shot-es-5.jpg" alt="Creador de parques" loading="lazy" width="506" height="1100">
-        <img lang="en" src="img/shot-en-5.jpg" alt="Park Creator" loading="lazy" width="506" height="1100">
+        <img src="/LineTycoon/img/shot-es-5.jpg" alt="Creador de parques" loading="lazy" width="506" height="1100">
+
       </div>
     </div>
   </section>
@@ -324,38 +339,38 @@
   <!-- FEATURES -->
   <section class="features">
     <div class="wrap">
-      <p class="eyebrow"><span lang="es">Qué te espera</span><span lang="en">What's inside</span></p>
-      <h2><span lang="es">Cada cliente, un drama</span><span lang="en">Every guest is a drama</span></h2>
+      <p class="eyebrow"><span>Qué te espera</span></p>
+      <h2><span>Cada cliente, un drama</span></h2>
       <div class="grid">
         <article class="card">
           <div class="ico bg-y">🚧</div>
-          <h3><span lang="es">Dibuja la cola</span><span lang="en">Draw the line</span></h3>
-          <p><span lang="es">¿Sin sitio? Cruza las colas con puentes, vagonetas y túneles. Usa el mapa de calor para encontrar el atasco.</span><span lang="en">Out of space? Cross your lines with bridges, mine carts and tunnels. Read the heat map to find the jam.</span></p>
+          <h3><span>Dibuja la cola</span></h3>
+          <p><span>¿Sin sitio? Cruza las colas con puentes, vagonetas y túneles. Usa el mapa de calor para encontrar el atasco.</span></p>
         </article>
         <article class="card">
           <div class="ico bg-r">😤</div>
-          <h3><span lang="es">Caos en la fila</span><span lang="en">Chaos in line</span></h3>
-          <p><span lang="es">Peleas, gente que se cuela, dormilones, globos que se escapan y nobles VIP sin ninguna paciencia.</span><span lang="en">Fights, line cutters, sleepyheads, runaway balloons and VIP nobles with zero patience.</span></p>
+          <h3><span>Caos en la fila</span></h3>
+          <p><span>Peleas, gente que se cuela, dormilones, globos que se escapan y nobles VIP sin ninguna paciencia.</span></p>
         </article>
         <article class="card">
           <div class="ico bg-b">👮</div>
-          <h3><span lang="es">Tu equipo</span><span lang="en">Your crew</span></h3>
-          <p><span lang="es">Contrata guardias, asistentes, mecánicos y mascotas. Ajusta precios, vende Fast Path y contenta al inspector.</span><span lang="en">Hire guards, ushers, mechanics and mascots. Set prices, sell Fast Path and keep the inspector happy.</span></p>
+          <h3><span>Tu equipo</span></h3>
+          <p><span>Contrata guardias, asistentes, mecánicos y mascotas. Ajusta precios, vende Fast Path y contenta al inspector.</span></p>
         </article>
         <article class="card">
           <div class="ico bg-g">🎢</div>
-          <h3><span lang="es">Súbete tú</span><span lang="en">Ride it yourself</span></h3>
-          <p><span lang="es">Modo primera persona: súbete a tu propia montaña rusa, con looping incluido. Y guarda un vídeo acelerado de tu parque.</span><span lang="en">First-person mode: ride your own roller coaster, loop included. And save a time-lapse video of your park.</span></p>
+          <h3><span>Súbete tú</span></h3>
+          <p><span>Modo primera persona: súbete a tu propia montaña rusa, con looping incluido. Y guarda un vídeo acelerado de tu parque.</span></p>
         </article>
         <article class="card">
           <div class="ico bg-p">📒</div>
-          <h3><span lang="es">30 secretos</span><span lang="en">30 secrets</span></h3>
-          <p><span lang="es">Entre la multitud se esconden 30 visitantes secretos. Encuéntralos y completa tu álbum.</span><span lang="en">30 secret guests hide in the crowd. Spot them all and fill your album.</span></p>
+          <h3><span>30 secretos</span></h3>
+          <p><span>Entre la multitud se esconden 30 visitantes secretos. Encuéntralos y completa tu álbum.</span></p>
         </article>
         <article class="card">
           <div class="ico bg-o">⭐</div>
-          <h3><span lang="es">21 estrellas</span><span lang="en">21 stars</span></h3>
-          <p><span lang="es">Cada atracción es un nuevo rompecabezas de gestión con tres estrellas por ganar.</span><span lang="en">Every ride is a new crowd-control puzzle with three stars to win.</span></p>
+          <h3><span>21 estrellas</span></h3>
+          <p><span>Cada atracción es un nuevo rompecabezas de gestión con tres estrellas por ganar.</span></p>
         </article>
       </div>
     </div>
@@ -364,17 +379,17 @@
   <!-- RIDES -->
   <section>
     <div class="wrap">
-      <p class="eyebrow"><span lang="es">7 atracciones</span><span lang="en">7 rides</span></p>
-      <h2><span lang="es">Un parque entero por ordenar</span><span lang="en">A whole park to sort out</span></h2>
-      <p class="lead"><span lang="es">De un carrusel tranquilo a un cohete galáctico con hora punta: cada una cambia las reglas.</span><span lang="en">From a calm carousel to a galactic rocket at rush hour: each one changes the rules.</span></p>
+      <p class="eyebrow"><span>7 atracciones</span></p>
+      <h2><span>Un parque entero por ordenar</span></h2>
+      <p class="lead"><span>De un carrusel tranquilo a un cohete galáctico con hora punta: cada una cambia las reglas.</span></p>
       <div class="rides">
-        <span class="ride"><span lang="es">El Carrusel</span><span lang="en">The Carousel</span> <span class="stars">★★★</span></span>
-        <span class="ride"><span lang="es">Los Rápidos</span><span lang="en">The Rapids</span> <span class="stars">★★★</span></span>
-        <span class="ride"><span lang="es">El Templo Perdido</span><span lang="en">The Lost Temple</span> <span class="stars">★★★</span></span>
-        <span class="ride"><span lang="es">El Torneo Real</span><span lang="en">The Royal Tournament</span> <span class="stars">★★★</span></span>
-        <span class="ride"><span lang="es">La Casa del Terror</span><span lang="en">The Haunted House</span> <span class="stars">★★★</span></span>
-        <span class="ride"><span lang="es">Cohete Galáctico</span><span lang="en">Galactic Rocket</span> <span class="stars">★★★</span></span>
-        <span class="ride"><span lang="es">Parque Libre</span><span lang="en">Free Park</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>El Carrusel</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>Los Rápidos</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>El Templo Perdido</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>El Torneo Real</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>La Casa del Terror</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>Cohete Galáctico</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span>Parque Libre</span> <span class="stars">★★★</span></span>
       </div>
     </div>
   </section>
@@ -382,13 +397,13 @@
   <!-- GOOD TO KNOW -->
   <section>
     <div class="wrap">
-      <p class="eyebrow"><span lang="es">A tener en cuenta</span><span lang="en">Good to know</span></p>
-      <h2><span lang="es">Juega a tu manera</span><span lang="en">Play your way</span></h2>
+      <p class="eyebrow"><span>A tener en cuenta</span></p>
+      <h2><span>Juega a tu manera</span></h2>
       <div class="know">
-        <div><b><span lang="es">Gratis + Premium</span><span lang="en">Free + Premium</span></b><span><span lang="es">Las 7 atracciones gratis. Premium (pago único) añade el Creador y quita los anuncios.</span><span lang="en">All 7 rides free. Premium (one-time) adds the Creator and removes ads.</span></span></div>
-        <div><b><span lang="es">Sin internet</span><span lang="en">Offline</span></b><span><span lang="es">Se juega sin conexión. Solo los vídeos opcionales la necesitan.</span><span lang="en">Plays without a connection. Only optional videos need one.</span></span></div>
-        <div><b><span lang="es">Anuncios justos</span><span lang="en">Fair ads</span></b><span><span lang="es">Sin banners. Los vídeos con premio son opcionales. Con Premium, ninguno.</span><span lang="en">No banners. Reward videos are optional. With Premium, none at all.</span></span></div>
-        <div><b><span lang="es">5 idiomas</span><span lang="en">5 languages</span></b><span><span lang="es">Español, inglés, francés, alemán y portugués.</span><span lang="en">English, Spanish, French, German and Portuguese.</span></span></div>
+        <div><b><span>Gratis + Premium</span></b><span><span>Las 7 atracciones gratis. Premium (pago único) añade el Creador y quita los anuncios.</span></span></div>
+        <div><b><span>Sin internet</span></b><span><span>Se juega sin conexión. Solo los vídeos opcionales la necesitan.</span></span></div>
+        <div><b><span>Anuncios justos</span></b><span><span>Sin banners. Los vídeos con premio son opcionales. Con Premium, ninguno.</span></span></div>
+        <div><b><span>5 idiomas</span></b><span><span>Español, inglés, francés, alemán y portugués.</span></span></div>
       </div>
     </div>
   </section>
@@ -396,12 +411,12 @@
   <!-- FINAL CTA -->
   <section class="final">
     <div class="wrap">
-      <h2><span lang="es">Pon orden en la cola</span><span lang="en">Take control of the line</span></h2>
-      <p class="lead" style="margin: 0 auto;"><span lang="es">The Line Tycoon llega muy pronto a iPhone y iPad.</span><span lang="en">The Line Tycoon is coming soon to iPhone and iPad.</span></p>
+      <h2><span>Pon orden en la cola</span></h2>
+      <p class="lead" style="margin: 0 auto;"><span>The Line Tycoon llega muy pronto a iPhone y iPad.</span></p>
       <div class="cta-row">
         <span class="store-badge soon" aria-label="App Store">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg>
-          <span><small><span lang="es">Muy pronto en la</span><span lang="en">Coming soon on the</span></small><strong>App Store</strong></span>
+          <span><small><span>Muy pronto en la</span></small><strong>App Store</strong></span>
         </span>
       </div>
     </div>
@@ -411,37 +426,16 @@
 <footer>
   <div class="wrap">
     <nav>
-      <a href="privacy.html"><span lang="es">Política de privacidad</span><span lang="en">Privacy Policy</span></a>
-      <a href="mailto:redpolasapps@gmail.com"><span lang="es">Soporte</span><span lang="en">Support</span>: redpolasapps@gmail.com</a>
-      <a href="../"><span lang="es">Más apps</span><span lang="en">More apps</span></a>
+      <a href="/LineTycoon/privacy.html"><span>Política de privacidad</span></a>
+      <a href="mailto:redpolasapps@gmail.com"><span>Soporte</span>: redpolasapps@gmail.com</a>
+      <a href="/"><span>Más apps</span></a>
     </nav>
     <div class="small">
       © 2026 Víctor García ·
-      <span lang="es">Modelos 3D de <a href="https://www.kenney.nl" rel="noopener">Kenney</a> (CC0)</span><span lang="en">3D models by <a href="https://www.kenney.nl" rel="noopener">Kenney</a> (CC0)</span>
+      <span>Modelos 3D de <a href="https://www.kenney.nl" rel="noopener">Kenney</a> (CC0)</span>
     </div>
   </div>
 </footer>
 
-<script>
-  (function () {
-    var root = document.documentElement;
-    function setLang(l) {
-      root.className = l;
-      root.setAttribute('lang', l);
-      document.querySelectorAll('.langs button').forEach(function (b) {
-        b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
-      });
-      try { localStorage.setItem('ltLang', l); } catch (e) {}
-    }
-    var saved = null;
-    try { saved = localStorage.getItem('ltLang'); } catch (e) {}
-    var q = new URLSearchParams(location.search).get('lang');
-    var nav = (navigator.language || 'es').toLowerCase();
-    setLang(q === 'en' || q === 'es' ? q : saved || (nav.indexOf('es') === 0 ? 'es' : 'en'));
-    document.querySelectorAll('.langs button').forEach(function (b) {
-      b.addEventListener('click', function () { setLang(b.dataset.lang); });
-    });
-  })();
-</script>
 </body>
 </html>

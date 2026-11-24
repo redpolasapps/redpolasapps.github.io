@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "linetycoon",
+    "name": "The Line Tycoon",
+    "status": "soon",
+    "appStoreId": "6835385812",
+    "game": true,
+    "page": "/LineTycoon/",
+    "privacy": "/LineTycoon/privacy.html",
+    "es": {
+      "category": "Juego · Simulación",
+      "pitch": "Dibuja colas, cruza puentes y vagonetas y sube a toda la multitud a la montaña rusa antes de que se le acabe la paciencia."
+    },
+    "en": {
+      "category": "Game · Simulation",
+      "pitch": "Draw the line, cross it with bridges and mine carts and get the whole crowd onto the roller coaster before their patience runs out."
+    }
+  },
+  {
+    "slug": "cozyplants",
+    "name": "Cozy Plants: Idle Garden",
+    "status": "live",
+    "appStoreId": "6831216434",
+    "game": true,
+    "privacy": "/CozyPlants/privacy.html",
+    "es": {
+      "category": "Juego · Relajante",
+      "pitch": "Un refugio botánico en tu bolsillo: cultiva 24 especies, colecciona plantas y disfruta de la calma a tu ritmo."
+    },
+    "en": {
+      "category": "Game · Cozy",
+      "pitch": "A cozy botanical retreat in your pocket: grow 24 species, collect plants and enjoy the calm at your own pace."
+    }
+  },
+  {
+    "slug": "dogweight",
+    "name": "DogWeight",
+    "status": "live",
+    "appStoreId": "6819761466",
+    "schemaCategory": "HealthApplication",
+    "privacy": "/DogWeight/privacy.html",
+    "es": {
+      "category": "Salud · Mascotas",
+      "pitch": "Lleva el control del peso y el crecimiento de tus perros de forma sencilla y visual."
+    },
+    "en": {
+      "category": "Health · Pets",
+      "pitch": "Track your dogs' weight and growth over time, simply and visually."
+    }
+  },
+  {
+    "slug": "eyecolor",
+    "name": "EyeColor: Baby Eye Predictor",
+    "status": "live",
+    "appStoreId": "6818159901",
+    "schemaCategory": "LifestyleApplication",
+    "privacy": "/BabyEyeColor/privacy.html",
+    "es": {
+      "category": "Estilo de vida · Familia",
+      "pitch": "Descubre la probabilidad genética del color de ojos de tu futuro bebé a partir de los de su familia."
+    },
+    "en": {
+      "category": "Lifestyle · Family",
+      "pitch": "Find out the genetic odds of your future baby's eye color from the family's own."
+    }
+  }
+]

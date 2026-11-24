@@ -1,0 +1,424 @@
+<!-- src: source of /LineTycoon/ and /LineTycoon/en/ — edit here and run python3 _src/build.py -->
+<!DOCTYPE html>
+<html lang="es" class="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!--HEAD-->
+<meta name="theme-color" content="#1f3fae">
+<link rel="icon" type="image/png" href="/LineTycoon/img/icon.png">
+<link rel="apple-touch-icon" href="/LineTycoon/img/apple-touch-icon.png">
+<link rel="preload" as="image" lang="es" href="/LineTycoon/img/shot-es-2.jpg" fetchpriority="high">
+<link rel="preload" as="image" lang="en" href="/LineTycoon/img/shot-en-2.jpg" fetchpriority="high">
+<meta name="apple-itunes-app" content="app-id=6835385812">
+<style>
+  :root {
+    --blue: #2452d6;
+    --blue-deep: #142a7a;
+    --navy: #0d1a4d;
+    --yellow: #ffcb2e;
+    --yellow-deep: #e5a400;
+    --red: #e8473b;
+    --green: #39b95a;
+    --green-deep: #23883f;
+    --cream: #fff6e2;
+    --paper: #fffaf0;
+    --ink: #1b2142;
+    --ink-soft: #4a5072;
+    --line: #1b2142;
+    --round: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Nunito", system-ui, -apple-system, sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+  }
+
+  /* ---------- top bar ---------- */
+  .bar {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+    padding-top: max(14px, env(safe-area-inset-top, 0px));
+  }
+  .bar .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; font-family: var(--round); font-weight: 900; font-size: 1.05rem; letter-spacing: .01em; }
+  .brand img { width: 34px; height: 34px; border-radius: 9px; border: 2px solid #fff; }
+  .langs { display: flex; gap: 6px; }
+  .langs a {
+    font: 800 .8rem var(--round); letter-spacing: .06em;
+    color: #fff; background: rgba(255,255,255,.14); border: 2px solid rgba(255,255,255,.5);
+    border-radius: 999px; padding: 5px 12px; cursor: pointer;
+  }
+  .langs a { text-decoration: none; }
+  .langs a.on { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(255,255,255,.16), transparent 45%),
+      repeating-conic-gradient(from 0deg at 50% 120%, rgba(255,255,255,.05) 0deg 8deg, transparent 8deg 16deg),
+      linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+    color: #fff;
+    padding-top: calc(max(14px, env(safe-area-inset-top, 0px)) + 72px);
+    overflow: hidden;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; }
+  .app-icon {
+    width: 96px; height: 96px; border-radius: 24px;
+    border: 4px solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+    margin-bottom: 22px;
+  }
+  .kicker {
+    display: inline-block; transform: rotate(-2deg);
+    background: var(--red); color: #fff;
+    font: 900 .85rem var(--round); letter-spacing: .12em; text-transform: uppercase;
+    padding: 6px 14px; border: 3px solid var(--ink); border-radius: 999px; box-shadow: 3px 3px 0 var(--ink);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: var(--round); font-weight: 900;
+    font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: .98; letter-spacing: -.01em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    -webkit-text-stroke: 2px var(--ink);
+    paint-order: stroke fill;
+    text-shadow: 4px 5px 0 var(--ink);
+    text-wrap: balance;
+  }
+  h1 .white { color: #fff; display: block; }
+  .tagline { font-size: 1.2rem; font-weight: 600; margin: 22px 0 28px; max-width: 30em; color: #e8ecff; text-wrap: pretty; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .store-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #000; color: #fff; text-decoration: none;
+    border-radius: 14px; padding: 10px 20px 10px 16px;
+    border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink);
+  }
+  .store-badge svg { width: 28px; height: 28px; fill: #fff; flex: none; }
+  .store-badge small { display: block; font-size: .72rem; opacity: .85; line-height: 1.1; }
+  .store-badge strong { display: block; font: 700 1.25rem var(--body); line-height: 1.15; letter-spacing: -.01em; }
+  .store-badge.soon { cursor: default; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .chip {
+    font: 800 .82rem var(--round); color: var(--ink);
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: 5px 12px;
+  }
+  .chip-premium { background: var(--yellow); text-decoration: none; }
+  .chip-premium:hover { background: #ffe07a; }
+  .hero-phone { position: relative; justify-self: center; width: min(320px, 78vw); }
+  .hero-phone img {
+    border-radius: 34px; border: 5px solid var(--ink); box-shadow: 10px 12px 0 rgba(13,26,77,.55);
+    transform: rotate(3deg);
+  }
+  .hero-phone .sticker {
+    position: absolute; left: -26px; bottom: 60px; transform: rotate(-8deg);
+    background: var(--yellow); color: var(--ink); font: 900 1rem var(--round); text-transform: uppercase;
+    border: 3px solid var(--ink); border-radius: 14px; padding: 8px 14px; box-shadow: 4px 4px 0 var(--ink);
+  }
+  .hero-band { margin-top: 56px; position: relative; }
+  .hero-band img { width: 100%; height: clamp(160px, 26vw, 330px); object-fit: cover; border-top: 5px solid var(--ink); }
+
+  /* ---------- sections ---------- */
+  section { padding: 72px 0; }
+  .eyebrow { font: 900 .82rem var(--round); letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  h2 {
+    font-family: var(--round); font-weight: 900; text-transform: uppercase;
+    font-size: clamp(1.8rem, 4.4vw, 2.7rem); line-height: 1.02; margin-bottom: 14px; text-wrap: balance;
+  }
+  .lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 40em; text-wrap: pretty; }
+
+  /* screenshots */
+  .shots {
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(150px, 1fr);
+    gap: 18px; margin-top: 34px; overflow-x: auto; padding: 6px 4px 18px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  }
+  .shots figure { scroll-snap-align: start; }
+  .shots img {
+    border-radius: 22px; border: 4px solid var(--ink); box-shadow: 6px 7px 0 var(--ink);
+    width: 100%; background: #dfe6ff;
+  }
+
+  /* features */
+  .features { background: var(--paper); border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 34px; }
+  .card {
+    background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 22px 22px 20px;
+    box-shadow: 5px 6px 0 var(--ink); min-width: 0;
+  }
+  .card .ico {
+    width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; font-size: 1.7rem;
+    border: 3px solid var(--ink); margin-bottom: 14px;
+  }
+  .card h3 { font: 900 1.12rem var(--round); text-transform: uppercase; margin-bottom: 8px; letter-spacing: .01em; }
+  .card p { color: var(--ink-soft); font-size: .96rem; }
+  .bg-y { background: var(--yellow); } .bg-r { background: #ffb3ab; } .bg-b { background: #b9cbff; }
+  .bg-g { background: #b8ecc5; } .bg-p { background: #e2c9ff; } .bg-o { background: #ffd8a8; }
+
+  /* rides */
+  .rides { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .ride {
+    font: 800 .95rem var(--round); background: #fff; border: 3px solid var(--ink); border-radius: 999px;
+    padding: 8px 16px; box-shadow: 3px 3px 0 var(--ink);
+  }
+  .stars { color: var(--yellow-deep); letter-spacing: .1em; }
+
+  /* premium */
+  .premium {
+    background: linear-gradient(160deg, #7b3fe4 0%, #4a1fa8 100%); color: #fff;
+    border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink);
+  }
+  .premium .lead { color: #eadcff; }
+  .premium .eyebrow { color: var(--yellow); }
+  .premium-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .ticks { list-style: none; margin-top: 22px; display: grid; gap: 10px; }
+  .ticks li { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; }
+  .ticks li::before {
+    content: "✓"; flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--yellow); color: var(--ink); font-weight: 900; border: 2px solid var(--ink); font-size: .8rem; margin-top: 1px;
+  }
+  .premium img { border-radius: 26px; border: 4px solid var(--ink); box-shadow: 8px 9px 0 rgba(13,26,77,.6); max-width: 300px; margin: 0 auto; transform: rotate(-2deg); }
+
+  /* good to know */
+  .know { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
+  .know div { background: #fff; border: 3px solid var(--ink); border-radius: 18px; padding: 16px; min-width: 0; }
+  .know b { display: block; font: 900 1rem var(--round); margin-bottom: 4px; }
+  .know span { color: var(--ink-soft); font-size: .92rem; }
+
+  /* final cta */
+  .final { text-align: center; background: var(--blue); color: #fff; border-top: 4px solid var(--ink); }
+  .final h2 { color: var(--yellow); -webkit-text-stroke: 1.5px var(--ink); paint-order: stroke fill; text-shadow: 3px 4px 0 var(--ink); }
+  .final .cta-row { justify-content: center; margin-top: 26px; }
+  .final .lead { color: #dfe6ff; }
+
+  footer { background: var(--navy); color: #b8c1ea; padding: 34px 0 calc(34px + env(safe-area-inset-bottom, 0px)); font-size: .9rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; align-items: center; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+  footer a { color: #fff; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+  footer .small { font-size: .8rem; opacity: .8; }
+
+  @media (max-width: 860px) {
+    .hero-grid, .premium-grid { grid-template-columns: 1fr; }
+    .hero-phone { margin-top: 10px; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .know { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .grid, .know { grid-template-columns: 1fr; }
+    .shots { grid-auto-columns: 62%; }
+    .hero-phone .sticker { left: -8px; }
+    section { padding: 56px 0; }
+  }
+</style>
+{{JSONLD}}
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="/LineTycoon/img/icon.png" alt="" width="34" height="34">The Line Tycoon</a>
+    <nav class="langs" aria-label="Idioma / Language">
+      <a lang="es" aria-current="page" class="on" href="/LineTycoon/">ES</a><a lang="es" href="{{ALT_LANG_URL}}" hreflang="en">EN</a>
+      <a lang="en" href="{{ALT_LANG_URL}}" hreflang="es">ES</a><a lang="en" aria-current="page" class="on" href="/LineTycoon/en/">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <img class="app-icon" src="/LineTycoon/img/icon.png" alt="The Line Tycoon" width="96" height="96">
+        <div class="kicker"><span lang="es">Juego de parque de atracciones</span><span lang="en">Theme park game</span></div>
+        <h1>
+          <span lang="es">Dibuja la cola.<span class="white">Domina el parque.</span></span>
+          <span lang="en">Draw the line.<span class="white">Run the park.</span></span>
+        </h1>
+        <p class="tagline">
+          <span lang="es">Miles de visitantes. Una sola puerta. El caos… hasta que tú dibujas la cola. Las atracciones ya están construidas: lo tuyo es que todo el mundo suba antes de que se le acabe la paciencia.</span>
+          <span lang="en">Thousands of guests. One gate. Total chaos… until you draw the line. The rides are already built: your job is getting everyone on before their patience runs out.</span>
+        </p>
+        <div class="cta-row">
+          <span class="store-badge soon" aria-label="App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg>
+            <span><small><span lang="es">Muy pronto en la</span><span lang="en">Coming soon on the</span></small><strong>App Store</strong></span>
+          </span>
+        </div>
+        <div class="facts">
+          <span class="chip"><span lang="es">Gratis para jugar</span><span lang="en">Free to play</span></span>
+          <a class="chip chip-premium" href="#premium"><span lang="es">👑 Premium: crea tu parque</span><span lang="en">👑 Premium: build your park</span></a>
+          <span class="chip"><span lang="es">Juega sin internet</span><span lang="en">Plays offline</span></span>
+          <span class="chip">iPhone · iPad</span>
+          <span class="chip"><span lang="es">Sin banners</span><span lang="en">No banners</span></span>
+        </div>
+      </div>
+      <div class="hero-phone">
+        <img lang="es" src="/LineTycoon/img/shot-es-2.jpg" alt="The Line Tycoon en iPhone: diseña tus colas con puentes y vagonetas" width="506" height="1100" fetchpriority="high">
+        <img lang="en" src="/LineTycoon/img/shot-en-2.jpg" alt="The Line Tycoon on iPhone: design your queues with bridges and mine carts" width="506" height="1100" fetchpriority="high">
+      </div>
+    </div>
+    <div class="hero-band">
+      <img src="/LineTycoon/img/hero.jpg" alt="" width="1600" height="686" loading="lazy">
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow"><span lang="es">Así se juega</span><span lang="en">How it plays</span></p>
+      <h2><span lang="es">Traza la cola con el dedo</span><span lang="en">Trace the line with one finger</span></h2>
+      <p class="lead">
+        <span lang="es">Postes y cuerdas, zigzags, puentes sobre el río, vagonetas por la selva y túneles bajo el templo. Tú dibujas el camino y la multitud se ordena sola.</span>
+        <span lang="en">Posts and ropes, zigzags, bridges over the river, mine carts through the jungle and tunnels under the temple. You draw the path and the crowd falls into place.</span>
+      </p>
+      <div class="shots">
+        <figure><img lang="es" src="/LineTycoon/img/shot-es-1.jpg" alt="Miles de visitantes con prisa en la entrada del parque" loading="lazy" width="506" height="1100"><img lang="en" src="/LineTycoon/img/shot-en-1.jpg" alt="Thousands of guests in a hurry at the park gate" loading="lazy" width="506" height="1100"></figure>
+        <figure><img lang="es" src="/LineTycoon/img/shot-es-2.jpg" alt="Diseña colas en zigzag con puentes y vagonetas" loading="lazy" width="506" height="1100"><img lang="en" src="/LineTycoon/img/shot-en-2.jpg" alt="Design zigzag queues with bridges and mine carts" loading="lazy" width="506" height="1100"></figure>
+        <figure><img lang="es" src="/LineTycoon/img/shot-es-3.jpg" alt="Peleas, colados y dormilones en la cola de la atracción" loading="lazy" width="506" height="1100"><img lang="en" src="/LineTycoon/img/shot-en-3.jpg" alt="Fights, line cutters and sleepyheads in the ride queue" loading="lazy" width="506" height="1100"></figure>
+        <figure><img lang="es" src="/LineTycoon/img/shot-es-4.jpg" alt="Modo primera persona: súbete a tu propia montaña rusa" loading="lazy" width="506" height="1100"><img lang="en" src="/LineTycoon/img/shot-en-4.jpg" alt="First-person mode: ride your own roller coaster" loading="lazy" width="506" height="1100"></figure>
+        <figure><img lang="es" src="/LineTycoon/img/shot-es-5.jpg" alt="Creador de parques Premium con edificios y atracciones" loading="lazy" width="506" height="1100"><img lang="en" src="/LineTycoon/img/shot-en-5.jpg" alt="Premium park Creator with buildings and rides" loading="lazy" width="506" height="1100"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="premium" id="premium">
+    <div class="wrap premium-grid">
+      <div>
+        <p class="eyebrow">Premium 👑</p>
+        <h2><span lang="es">Tu parque, tus reglas</span><span lang="en">Your park, your rules</span></h2>
+        <p class="lead"><span lang="es">El juego es gratis y completo. Premium es un pago único que abre el Creador de parques: diseña tus propios mapas y juega en ellos.</span><span lang="en">The game is free and complete. Premium is a one-time purchase that unlocks the park Creator: design your own maps and play them.</span></p>
+        <ul class="ticks">
+          <li><span lang="es">Editor de parques y modo sandbox: tres tamaños de mapa, paredes, agua, fuentes y decoración.</span><span lang="en">Park editor and sandbox: three map sizes, walls, water, fountains and decorations.</span></li>
+          <li><span lang="es">10 modelos de atracción y edificios nuevos unidos por vías de vagonetas.</span><span lang="en">10 ride designs and extra buildings linked by mine-car tracks.</span></li>
+          <li><span lang="es">Sin anuncios y con recompensas al instante.</span><span lang="en">No ads and instant rewards.</span></li>
+          <li><span lang="es">Sin suscripciones. Compatible con En Familia.</span><span lang="en">No subscription. Family Sharing supported.</span></li>
+        </ul>
+      </div>
+      <div>
+        <img lang="es" src="/LineTycoon/img/shot-es-5.jpg" alt="Creador de parques" loading="lazy" width="506" height="1100">
+        <img lang="en" src="/LineTycoon/img/shot-en-5.jpg" alt="Park Creator" loading="lazy" width="506" height="1100">
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="wrap">
+      <p class="eyebrow"><span lang="es">Qué te espera</span><span lang="en">What's inside</span></p>
+      <h2><span lang="es">Cada cliente, un drama</span><span lang="en">Every guest is a drama</span></h2>
+      <div class="grid">
+        <article class="card">
+          <div class="ico bg-y">🚧</div>
+          <h3><span lang="es">Dibuja la cola</span><span lang="en">Draw the line</span></h3>
+          <p><span lang="es">¿Sin sitio? Cruza las colas con puentes, vagonetas y túneles. Usa el mapa de calor para encontrar el atasco.</span><span lang="en">Out of space? Cross your lines with bridges, mine carts and tunnels. Read the heat map to find the jam.</span></p>
+        </article>
+        <article class="card">
+          <div class="ico bg-r">😤</div>
+          <h3><span lang="es">Caos en la fila</span><span lang="en">Chaos in line</span></h3>
+          <p><span lang="es">Peleas, gente que se cuela, dormilones, globos que se escapan y nobles VIP sin ninguna paciencia.</span><span lang="en">Fights, line cutters, sleepyheads, runaway balloons and VIP nobles with zero patience.</span></p>
+        </article>
+        <article class="card">
+          <div class="ico bg-b">👮</div>
+          <h3><span lang="es">Tu equipo</span><span lang="en">Your crew</span></h3>
+          <p><span lang="es">Contrata guardias, asistentes, mecánicos y mascotas. Ajusta precios, vende Fast Path y contenta al inspector.</span><span lang="en">Hire guards, ushers, mechanics and mascots. Set prices, sell Fast Path and keep the inspector happy.</span></p>
+        </article>
+        <article class="card">
+          <div class="ico bg-g">🎢</div>
+          <h3><span lang="es">Súbete tú</span><span lang="en">Ride it yourself</span></h3>
+          <p><span lang="es">Modo primera persona: súbete a tu propia montaña rusa, con looping incluido. Y guarda un vídeo acelerado de tu parque.</span><span lang="en">First-person mode: ride your own roller coaster, loop included. And save a time-lapse video of your park.</span></p>
+        </article>
+        <article class="card">
+          <div class="ico bg-p">📒</div>
+          <h3><span lang="es">30 secretos</span><span lang="en">30 secrets</span></h3>
+          <p><span lang="es">Entre la multitud se esconden 30 visitantes secretos. Encuéntralos y completa tu álbum.</span><span lang="en">30 secret guests hide in the crowd. Spot them all and fill your album.</span></p>
+        </article>
+        <article class="card">
+          <div class="ico bg-o">⭐</div>
+          <h3><span lang="es">21 estrellas</span><span lang="en">21 stars</span></h3>
+          <p><span lang="es">Cada atracción es un nuevo rompecabezas de gestión con tres estrellas por ganar.</span><span lang="en">Every ride is a new crowd-control puzzle with three stars to win.</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIDES -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow"><span lang="es">7 atracciones</span><span lang="en">7 rides</span></p>
+      <h2><span lang="es">Un parque entero por ordenar</span><span lang="en">A whole park to sort out</span></h2>
+      <p class="lead"><span lang="es">De un carrusel tranquilo a un cohete galáctico con hora punta: cada una cambia las reglas.</span><span lang="en">From a calm carousel to a galactic rocket at rush hour: each one changes the rules.</span></p>
+      <div class="rides">
+        <span class="ride"><span lang="es">El Carrusel</span><span lang="en">The Carousel</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span lang="es">Los Rápidos</span><span lang="en">The Rapids</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span lang="es">El Templo Perdido</span><span lang="en">The Lost Temple</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span lang="es">El Torneo Real</span><span lang="en">The Royal Tournament</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span lang="es">La Casa del Terror</span><span lang="en">The Haunted House</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span lang="es">Cohete Galáctico</span><span lang="en">Galactic Rocket</span> <span class="stars">★★★</span></span>
+        <span class="ride"><span lang="es">Parque Libre</span><span lang="en">Free Park</span> <span class="stars">★★★</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOD TO KNOW -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow"><span lang="es">A tener en cuenta</span><span lang="en">Good to know</span></p>
+      <h2><span lang="es">Juega a tu manera</span><span lang="en">Play your way</span></h2>
+      <div class="know">
+        <div><b><span lang="es">Gratis + Premium</span><span lang="en">Free + Premium</span></b><span><span lang="es">Las 7 atracciones gratis. Premium (pago único) añade el Creador y quita los anuncios.</span><span lang="en">All 7 rides free. Premium (one-time) adds the Creator and removes ads.</span></span></div>
+        <div><b><span lang="es">Sin internet</span><span lang="en">Offline</span></b><span><span lang="es">Se juega sin conexión. Solo los vídeos opcionales la necesitan.</span><span lang="en">Plays without a connection. Only optional videos need one.</span></span></div>
+        <div><b><span lang="es">Anuncios justos</span><span lang="en">Fair ads</span></b><span><span lang="es">Sin banners. Los vídeos con premio son opcionales. Con Premium, ninguno.</span><span lang="en">No banners. Reward videos are optional. With Premium, none at all.</span></span></div>
+        <div><b><span lang="es">5 idiomas</span><span lang="en">5 languages</span></b><span><span lang="es">Español, inglés, francés, alemán y portugués.</span><span lang="en">English, Spanish, French, German and Portuguese.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2><span lang="es">Pon orden en la cola</span><span lang="en">Take control of the line</span></h2>
+      <p class="lead" style="margin: 0 auto;"><span lang="es">The Line Tycoon llega muy pronto a iPhone y iPad.</span><span lang="en">The Line Tycoon is coming soon to iPhone and iPad.</span></p>
+      <div class="cta-row">
+        <span class="store-badge soon" aria-label="App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3-.79-1.55.02-2.97.9-3.77 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.87 2.3 1.15-.05 1.58-.75 2.97-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.41-3.68zM14.1 5.86c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.77-.96 2.82 1.02.08 2.07-.52 2.7-1.28z"/></svg>
+          <span><small><span lang="es">Muy pronto en la</span><span lang="en">Coming soon on the</span></small><strong>App Store</strong></span>
+        </span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/LineTycoon/privacy.html"><span lang="es">Política de privacidad</span><span lang="en">Privacy Policy</span></a>
+      <a href="mailto:redpolasapps@gmail.com"><span lang="es">Soporte</span><span lang="en">Support</span>: redpolasapps@gmail.com</a>
+      <a href="{{HOME}}"><span lang="es">Más apps</span><span lang="en">More apps</span></a>
+    </nav>
+    <div class="small">
+      © 2026 Víctor García ·
+      <span lang="es">Modelos 3D de <a href="https://www.kenney.nl" rel="noopener">Kenney</a> (CC0)</span><span lang="en">3D models by <a href="https://www.kenney.nl" rel="noopener">Kenney</a> (CC0)</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
